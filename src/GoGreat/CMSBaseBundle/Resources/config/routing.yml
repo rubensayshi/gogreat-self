@@ -1,0 +1,7 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: CMSBase:Frontpage:index }
+
+hello:
+    pattern:  /haithar
+    defaults: { _controller: CMSBase:Frontpage:hello }

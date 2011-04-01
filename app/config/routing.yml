@@ -1,12 +1,5 @@
-_welcome:
-    pattern:  /
-    defaults: { _controller: AcmeDemo:Welcome:index }
+# includes / routing
+cmsbase:
+    resource: "@CMSBase/Resources/config/routing.yml"
 
-_demo_secured:
-    resource: "@AcmeDemo/Controller/SecuredController.php"
-    type:     annotation
-
-_demo:
-    resource: "@AcmeDemo/Controller/DemoController.php"
-    type:     annotation
-    prefix:   /demo
+    
