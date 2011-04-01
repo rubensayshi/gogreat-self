@@ -60,6 +60,9 @@ install_git doctrine-dbal git://github.com/doctrine/dbal.git 2.0.3
 # Doctrine Common
 install_git doctrine-common git://github.com/doctrine/common.git 2.0.1
 
+# Doctrine Fxitures
+install_git doctrine-data-fixtures git://github.com/doctrine/data-fixtures.git
+
 # Swiftmailer
 install_git swiftmailer git://github.com/swiftmailer/swiftmailer.git origin/4.1
 

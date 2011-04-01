@@ -5,3 +5,8 @@ homepage:
 hello:
     pattern:  /haithar
     defaults: { _controller: CMSBase:Frontpage:hello }
+
+page:
+    pattern:  /page/{slug}
+    defaults: { _controller: CMSBase:Page:show }
+    

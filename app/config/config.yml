@@ -47,7 +47,9 @@ doctrine:
         entity_managers:
             default: 
                 mappings:
-                    CMSBase: ~
+                    CMSBase: 
+                        type: yml
+                        dir: Resources/config/doctrine
 
 # Swiftmailer Configuration
 swiftmailer:

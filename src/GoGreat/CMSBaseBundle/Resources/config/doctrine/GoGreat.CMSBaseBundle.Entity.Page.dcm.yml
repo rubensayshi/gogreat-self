@@ -1,0 +1,23 @@
+GoGreat\CMSBaseBundle\Entity\Page:
+  type: entity
+  table: page
+  repositoryClass: GoGreat\CMSBaseBundle\Entity\PageRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    title:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    content:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true  
+  lifecycleCallbacks: {  }

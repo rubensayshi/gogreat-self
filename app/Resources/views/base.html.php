@@ -41,7 +41,7 @@
         	a, a:visited	{ color: #36393D; font-decoration: underline; }
         	a:hover			{ color: #3F4C6B; font-decoration: underline; }
         	h1, h2, h3		{ font-family: 'aller-display'; font-weight: bold }
-        	h1				{ font-size: 200% }
+        	h1				{ font-size: 200%; letter-spacing: 10px; }
         	h2				{ font-size: 175% }
         	h3				{ font-size: 150% }
         	.container		{ width: 900px; margin: 0 auto; height: 100%; }
@@ -58,7 +58,7 @@
     <body>
     	<div class="container">
     		<div class="header">
-    			<div class="title font"><h1>W E B S I T E</h1></div>
+    			<div class="title font"><h1>WEBSITE</h1></div>
     			<div class="menu"><?php echo $view['actions']->render('CMSBase:Menu:index') ?></div>
     		</div>
     		<div class="content">
