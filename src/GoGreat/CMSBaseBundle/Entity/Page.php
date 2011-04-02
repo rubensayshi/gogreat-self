@@ -1,7 +1,7 @@
 <?php
 
 namespace GoGreat\CMSBaseBundle\Entity;
-
+use GoGreat\CMSBaseBundle\Util\SlugNormalizer;
 /**
  * GoGreat\CMSBaseBundle\Entity\Page
  */
@@ -41,7 +41,7 @@ class Page
     public function setTitle($title)
     {
         $this->title = $title;
-        $this->setSlug($title);
+        $this->setSlug($this->getTitle());
     }
 
     /**
@@ -86,7 +86,7 @@ class Page
      */
     public function setSlug($slug)
     {
-        $this->slug = $this->slugize($slug);
+        $this->slug = (string) new SlugNormalizer($slug);
     }
 
     /**
@@ -96,15 +96,9 @@ class Page
      */
     public function getSlug()
     {
-        return $this->slug;
-    }
-    
-    protected function slugize($slug)
-    {
-    	$slug = str_replace(' ', '-', $slug);
-    	$slug = preg_replace('/[^\w-]/', '', $slug);
-    	$slug = preg_replace('/--+/', '-', $slug);
+    	if($this->slug == null)
+    		return $this->setSlug($this->getTitle());
     	
-    	return $slug;
+        return $this->slug;
     }
 }
