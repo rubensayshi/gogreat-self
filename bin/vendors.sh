@@ -78,17 +78,11 @@ cd zend-log/Zend
 install_git Log git://github.com/symfony/zend-log.git
 cd ../..
 
-# SensioFrameworkExtraBundle
-mkdir -p bundles/Sensio/Bundle
-cd bundles/Sensio/Bundle
-install_git FrameworkExtraBundle git://github.com/sensio/SensioFrameworkExtraBundle.git
+# MenuBundle
+mkdir -p bundles/Knplabs/Bundle
+cd bundles/Knplabs/Bundle
+install_git MenuBundle git://github.com/knplabs/MenuBundle.git
 cd ../../..
-
-# SecurityExtraBundle
-mkdir -p bundles/JMS
-cd bundles/JMS
-install_git SecurityExtraBundle git://github.com/schmittjoh/SecurityExtraBundle.git
-cd ../..
 
 # WebConfiguratorBundle
 mkdir -p bundles/Symfony/Bundle

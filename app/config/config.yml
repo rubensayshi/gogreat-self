@@ -3,6 +3,8 @@ imports:
     - { resource: security.yml }
     cmsbase_bundle:
         resource: @CMSBase/Resources/config/services.yml
+        resource: @CMSBase/Resources/config/menu.yml  
+        
 framework:
     charset:       UTF-8
     error_handler: null
@@ -58,4 +60,7 @@ swiftmailer:
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
-    
+
+# Enable menu helper
+knplabs_menu:
+    templating: true

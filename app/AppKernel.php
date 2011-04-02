@@ -14,8 +14,10 @@ class AppKernel extends Kernel
             new Symfony\Bundle\ZendBundle\ZendBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),            
+      		new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+      		
        		new GoGreat\CMSBaseBundle\CMSBaseBundle(),
         );
 

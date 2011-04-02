@@ -1,0 +1,13 @@
+parameters:
+    menu.main.class:      GoGreat\CMSBaseBundle\Menu\MainMenu
+    
+services:
+   menu.main:
+      class:        %menu.main.class%       
+      scope:        request
+      tags:
+         -  { name: menu, alias: main }
+      arguments: 
+         request:        "@request"
+         router:         "@router"
+         entity_manager: "@doctrine.orm.entity_manager"

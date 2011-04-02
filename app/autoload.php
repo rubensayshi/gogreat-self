@@ -11,6 +11,7 @@ $loader->registerNamespaces(array(
     'Doctrine'         					=> __DIR__.'/../vendor/doctrine/lib',
     'Zend\\Log'        					=> __DIR__.'/../vendor/zend-log',
     'Assetic'          					=> __DIR__.'/../vendor/assetic/src',
+    'Knplabs'                    	    => __DIR__.'/../vendor/bundles',
     'GoGreat'          					=> __DIR__.'/../src',
 ));
 $loader->registerPrefixes(array(
