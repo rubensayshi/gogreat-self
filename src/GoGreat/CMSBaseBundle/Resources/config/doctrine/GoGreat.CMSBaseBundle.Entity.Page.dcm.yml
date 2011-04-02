@@ -15,9 +15,13 @@ GoGreat\CMSBaseBundle\Entity\Page:
       length: 45
       fixed: false
       nullable: true
-    content:
+    slug:
       type: string
-      length: 255
+      length: 45
+      fixed: false
+      nullable: true
+    content:
+      type: text
       fixed: false
       nullable: true  
   lifecycleCallbacks: {  }

@@ -41,6 +41,7 @@ class Page
     public function setTitle($title)
     {
         $this->title = $title;
+        $this->setSlug($title);
     }
 
     /**
@@ -71,5 +72,39 @@ class Page
     public function getContent()
     {
         return $this->content;
+    }
+    /**
+     * @var string $slug
+     */
+    private $slug;
+
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $this->slugize($slug);
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string $slug
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+    
+    protected function slugize($slug)
+    {
+    	$slug = str_replace(' ', '-', $slug);
+    	$slug = preg_replace('/[^\w-]/', '', $slug);
+    	$slug = preg_replace('/--+/', '-', $slug);
+    	
+    	return $slug;
     }
 }

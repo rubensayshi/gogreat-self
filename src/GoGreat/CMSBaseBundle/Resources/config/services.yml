@@ -1,0 +1,5 @@
+services:
+   menu_item_manager:
+      class:        GoGreat\CMSBaseBundle\Entity\MenuItemManager
+      calls:
+          - [ setContainer, ["@service_container"] ]

@@ -1,0 +1,30 @@
+GoGreat\CMSBaseBundle\Entity\MenuItem:
+  type: entity
+  table: menu_item
+  repositoryClass: GoGreat\CMSBaseBundle\Entity\MenuItemRepository
+  fields:
+    identifier:
+      id: true
+      type: string
+      length: 100
+      nullable: false
+    title:
+      type: string
+      length: 100
+      nullable: true
+    routing:
+      type: string
+      length: 100
+      nullable: flase
+    arguments:
+      type: array
+      nullable: true  
+    weight:
+      type: integer
+      unsigned: false
+      nullable: false
+      length: 5
+      
+  lifecycleCallbacks: 
+    prePersist: [ fixIdentifier ]
+  

@@ -1,7 +1,7 @@
 <?php $view->extend('CMSBase::layout.html.php') ?>
 
-<?php echo $page->content; ?>
+<?php echo $page->getContent(); ?>
 
 <?php $view['slots']->start('_title') ?>
-<?php echo $page->title; ?>
+<?php echo $page->getTitle(); ?>
 <?php $view['slots']->stop() ?>
