@@ -13,6 +13,7 @@ class LoadCMSBasePageData extends ContainerAware implements FixtureInterface
 {
 	public function load($manager)
 	{
+		$menuCnt = 0;
 		for($p = 0; $p < 10; $p++)
 		{
 			$page = new Entity\Page();
@@ -21,7 +22,7 @@ class LoadCMSBasePageData extends ContainerAware implements FixtureInterface
 
 			$manager->persist($page);	
 			
-			if(round(mt_rand(0, 1)))
+			if(round(mt_rand(0, 1)) && $menuCnt < 3)
 			{
 				$item = new Entity\MenuItem();
 				$item->setTitle($page->getTitle());
@@ -29,6 +30,7 @@ class LoadCMSBasePageData extends ContainerAware implements FixtureInterface
 				$item->setArguments(array('slug' => $page->getSlug()));
 	
 				$manager->getRepository('GoGreat\CMSBaseBundle\Entity\MenuItem')->persist($item);
+				$menuCnt++;
 			}
 					
 		}

@@ -10,3 +10,13 @@ page:
     pattern:  /page/{slug}
     defaults: { _controller: CMSBaseBundle:Page:show }
     
+_security_login:
+    pattern:  /login
+    defaults: { _controller: CMSBaseBundle:Security:login }
+    
+_security_check:
+    pattern:  /login_check
+    
+_security_logout:
+    pattern:  /logout
+    
