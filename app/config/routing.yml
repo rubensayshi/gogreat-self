@@ -1,5 +1,3 @@
 # includes / routing
 cmsbase:
     resource: "@CMSBase/Resources/config/routing.yml"
-
-    
