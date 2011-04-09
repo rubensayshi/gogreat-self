@@ -4,8 +4,8 @@ namespace GoGreat\CMSBaseBundle\DataFixtures\ORM;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Doctrine\Common\DataFixtures\Loader;
-use Doctrine\ORM\EntityManager,
-	Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\ORM\EntityManager;
+use	Doctrine\Common\DataFixtures\FixtureInterface;
 use GoGreat\CMSBaseBundle\Entity;
 
 
@@ -28,7 +28,7 @@ class LoadCMSBasePageData extends ContainerAware implements FixtureInterface
 				$item->setRouting('page');
 				$item->setArguments(array('slug' => $page->getSlug()));
 	
-				$this->container->get('menu_item_manager')->persist($item);
+				$manager->getRepository('GoGreat\CMSBaseBundle\Entity\MenuItem')->persist($item);
 			}
 					
 		}

@@ -47,7 +47,7 @@ class LoadCMSBaseMenuItemData extends ContainerAware implements FixtureInterface
 			if(isset($data['weight']))
 				$item->setWeight($data['weight']);
 
-			$this->container->get('menu_item_manager')->persist($item);
+			$manager->getRepository('GoGreat\CMSBaseBundle\Entity\MenuItem')->persist($item);
 		}
 
 		$manager->flush();

@@ -19,4 +19,31 @@ class MenuItemRepository extends EntityRepository
 		
 		return $qb->getQuery()->getResult();
 	}
+	
+	/**
+	 * persist an instance of MenuItem with the entity_manager
+	 * 
+	 * @param MenuItem $item
+	 */
+	public function persist(MenuItem $item)
+	{		
+		$em = $this->getEntityManager();
+		
+		$identifier = $item->getIdentifier();
+		$generated = (!$identifier);
+		
+		if($generated)				
+			$identifier = $item->fixIdentifier();
+
+		if(!$generated && ($found = $this->findOneByIdentifier($identifier)) && ($item != $found))
+			return false;
+		else if($generated)
+			while($this->findOneByIdentifier($identifier))
+				$identifier = $item->fixIdentifier(true);
+				
+		$item->setIdentifier($identifier);
+		
+		$em->persist($item);
+		$em->flush();
+	}
 }
