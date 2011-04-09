@@ -23,7 +23,7 @@ cp -r LICENSE /tmp/Symfony/
 cp -r VERSION /tmp/Symfony/
 cd /tmp/Symfony
 sudo rm -rf app/cache/* app/logs/* .git*
-chmod 777 app/cache app/logs
+chmod 0777 app/cache app/logs
 
 # DS_Store cleanup
 find . -name .DS_Store | xargs rm -rf -

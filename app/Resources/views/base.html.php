@@ -13,7 +13,7 @@
     		</div>
     		<div class="content">
     			<div class="content-inner"><?php $view['slots']->output('_content', '[_content]') ?></div>
-    			<div class="content-sidebar"><?php echo $view['actions']->render('CMSBase:Sidebar:index') ?></div>
+    			<div class="content-sidebar"><?php echo $view['actions']->render('CMSBaseBundle:Sidebar:index') ?></div>
     			<div class="clearfix"></div>
     		</div>
     	</div>        

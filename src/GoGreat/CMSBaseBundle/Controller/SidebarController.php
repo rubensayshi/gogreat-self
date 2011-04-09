@@ -8,6 +8,6 @@ class SidebarController extends Controller
 {	
     public function indexAction()
     {
-        return $this->render('CMSBase:Sidebar:index.html.php');
+        return $this->render('CMSBaseBundle:Sidebar:index.html.php');
     }
 }

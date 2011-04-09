@@ -13,13 +13,13 @@ class FrontpageController extends Controller
 	
     public function indexAction()
     {
-        return $this->render('CMSBase:Frontpage:index.html.php');
+        return $this->render('CMSBaseBundle:Frontpage:index.html.php');
     }
     
     public function helloAction()
     {
     	
-    	return $this->render('CMSBase:Frontpage:hello.html.php', array(
+    	return $this->render('CMSBaseBundle:Frontpage:hello.html.php', array(
     		'name'		=> $this->getRequest()->get('name', 'World'),
     	));
     }

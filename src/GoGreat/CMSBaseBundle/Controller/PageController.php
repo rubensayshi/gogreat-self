@@ -30,7 +30,7 @@ class PageController extends Controller
     	if(!$page)
         	throw new Exception\NotFoundHttpException('The page does not exist.');
     	
-        return $this->render('CMSBase:Page:show.html.php', array(
+        return $this->render('CMSBaseBundle:Page:show.html.php', array(
         	'page'				=> $page,
         ));
     }

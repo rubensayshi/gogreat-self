@@ -1,4 +1,4 @@
-<?php $view->extend('CMSBase::layout.html.php') ?>
+<?php $view->extend('CMSBaseBundle::layout.html.php') ?>
 
 Hello, <?php echo $name ?>
 

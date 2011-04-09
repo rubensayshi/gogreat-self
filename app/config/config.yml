@@ -2,8 +2,8 @@ imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
     cmsbase_bundle:
-        resource: @CMSBase/Resources/config/services.yml
-        resource: @CMSBase/Resources/config/menu.yml  
+        resource: @CMSBaseBundle/Resources/config/services.yml
+        resource: @CMSBaseBundle/Resources/config/menu.yml  
         
 framework:
     charset:       UTF-8
@@ -53,7 +53,7 @@ doctrine:
         entity_managers:
             default: 
                 mappings:
-                    CMSBase: 
+                    CMSBaseBundle: 
                         type: yml
                         dir: Resources/config/doctrine
 

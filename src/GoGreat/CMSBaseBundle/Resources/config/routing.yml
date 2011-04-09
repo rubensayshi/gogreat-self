@@ -1,12 +1,12 @@
 homepage:
     pattern:  /
-    defaults: { _controller: CMSBase:Frontpage:index }
+    defaults: { _controller: CMSBaseBundle:Frontpage:index }
 
 hello:
     pattern:  /haithar
-    defaults: { _controller: CMSBase:Frontpage:hello }
+    defaults: { _controller: CMSBaseBundle:Frontpage:hello }
 
 page:
     pattern:  /page/{slug}
-    defaults: { _controller: CMSBase:Page:show }
+    defaults: { _controller: CMSBaseBundle:Page:show }
     
