@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters.ini }
+    - { resource: parameters.php }
     - { resource: security.yml }
     cmsbase_bundle:
         resource: @CMSBaseBundle/Resources/config/menu.yml  
