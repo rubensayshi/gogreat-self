@@ -10,5 +10,5 @@ $container->setParameter('mailer_host', 		'localhost');
 $container->setParameter('mailer_user', 		'');
 $container->setParameter('mailer_password', 	'');
 $container->setParameter('locale', 				'en');
-$container->setParameter('csrf_secret', 		'xxxxxxxxxx');
+$container->setParameter('csrf_secret', 		'xyxyxyxyxyxy');
 
