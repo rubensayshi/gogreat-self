@@ -1,0 +1,23 @@
+GoGreat\CMSBaseBundle\Entity\User:
+  type: entity
+  table: user
+  repositoryClass: GoGreat\CMSBaseBundle\Entity\UserRepository
+  fields:
+    username:
+      id: true
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+      unique: true
+    password:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    email:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

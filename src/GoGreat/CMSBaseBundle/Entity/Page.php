@@ -18,7 +18,12 @@ class Page
     private $title;
 
     /**
-     * @var string $content
+     * @var string $slug
+     */
+    private $slug;
+
+    /**
+     * @var text $content
      */
     private $content;
 
@@ -55,31 +60,6 @@ class Page
     }
 
     /**
-     * Set content
-     *
-     * @param string $content
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string $content
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-    /**
-     * @var string $slug
-     */
-    private $slug;
-
-
-    /**
      * Set slug
      *
      * @param string $slug
@@ -97,8 +77,28 @@ class Page
     public function getSlug()
     {
     	if($this->slug == null)
-    		return $this->setSlug($this->getTitle());
-    	
+    		$this->setSlug($this->getTitle());
+    		
         return $this->slug;
+    }
+
+    /**
+     * Set content
+     *
+     * @param text $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * Get content
+     *
+     * @return text $content
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 }
