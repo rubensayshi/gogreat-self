@@ -37,14 +37,15 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        default_connection: default
+        default_connection: master
         connections:
-            default:
-                driver:   %database_driver%
-                host:     %database_host%
-                dbname:   %database_name%
-                user:     %database_user%
-                password: %database_password%
+            master:
+               driver:   %database.master.driver%
+               host:     %database.master.host%
+               port:     %database.master.port%
+               dbname:   %database.master.name%
+               user:     %database.master.user%
+               password: %database.master.pass%
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
