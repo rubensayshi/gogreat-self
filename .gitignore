@@ -6,3 +6,4 @@ app/cache/*
 app/logs/*
 build/
 vendor/
+data/*

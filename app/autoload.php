@@ -12,6 +12,7 @@ $loader->registerNamespaces(array(
     'Monolog'        					=> __DIR__.'/../vendor/monolog/src',
     'Assetic'          					=> __DIR__.'/../vendor/assetic/src',
     'Knplabs'                    	    => __DIR__.'/../vendor/bundles',
+    'GoGreat\\SymfonyWrapper'			=> __DIR__.'/../vendor/gogreat/src', 
     'GoGreat'          					=> __DIR__.'/../src',
 ));
 $loader->registerPrefixes(array(

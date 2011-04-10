@@ -75,6 +75,9 @@ install_git twig-extensions https://github.com/fabpot/Twig-extensions.git
 # Monolog
 install_git monolog https://github.com/Seldaek/monolog.git
 
+# GoGreat SymfonyWrapper
+install_git gogreat https://rubensayshi@github.com/rubensayshi/symfony-wrapper.git
+
 # MenuBundle
 mkdir -p $BUNDLES/Knplabs/Bundle
 cd $BUNDLES/Knplabs/Bundle
