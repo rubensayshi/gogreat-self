@@ -1,6 +1,6 @@
 <?php
 
-namespace GoGreat\CMSBaseBundle\Entity;
+namespace GoGreat\UserBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;

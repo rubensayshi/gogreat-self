@@ -1,11 +1,11 @@
 <?php
 
-namespace GoGreat\CMSBaseBundle\Entity;
+namespace GoGreat\UserBundle\Entity;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * GoGreat\CMSBaseBundle\Entity\User
+ * GoGreat\UserBundle\Entity\User
  */
 class User implements UserInterface
 {

@@ -1,7 +1,7 @@
-GoGreat\CMSBaseBundle\Entity\User:
+GoGreat\UserBundle\Entity\User:
   type: entity
   table: user
-  repositoryClass: GoGreat\CMSBaseBundle\Entity\UserRepository
+  repositoryClass: GoGreat\UserBundle\Entity\UserRepository
   fields:
     username:
       id: true

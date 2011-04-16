@@ -1,3 +1,5 @@
-# includes / routing
-cmsbase:
+# includes
+CMSBaseBundle:
     resource: "@CMSBaseBundle/Resources/config/routing.yml"
+UserBundle:
+    resource: "@UserBundle/Resources/config/routing.yml"

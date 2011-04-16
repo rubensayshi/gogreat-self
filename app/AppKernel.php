@@ -19,6 +19,7 @@ class AppKernel extends Kernel
       		new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
       		
        		new GoGreat\CMSBaseBundle\CMSBaseBundle(),
+       		new GoGreat\UserBundle\UserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
