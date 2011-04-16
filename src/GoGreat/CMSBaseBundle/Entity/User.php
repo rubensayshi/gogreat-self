@@ -92,7 +92,7 @@ class User implements UserInterface
     
     function getSalt()
     {
-    	return 'x';
+    	return '';
     }
     
     function eraseCredentials() 

@@ -2,12 +2,13 @@
 security:  
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        GoGreat\CMSBaseBundle\Entity\User: plaintext
         
     providers:
         default_provider:
             providers: [in_memory, main]
         main:
-            entity: { class: GoGreat\CMSBaseBundle\Entity\User, property: username }
+            entity: { class: GoGreat\CMSBaseBundle\Entity\User }
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }
