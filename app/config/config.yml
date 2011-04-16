@@ -1,8 +1,10 @@
 imports:
     - { resource: parameters.php }
     - { resource: security.yml }
-    cmsbase_bundle:
+    CMSBaseBundle:
         resource: @CMSBaseBundle/Resources/config/menu.yml  
+    UserBundle:
+        resource: @UserBundle/Resources/config/menu.yml  
         
 framework:
     charset:       UTF-8

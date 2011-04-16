@@ -1,10 +1,5 @@
-_security_login:
-    pattern:  /login
-    defaults: { _controller: CMSBaseBundle:Security:login }
-    
-_security_check:
-    pattern:  /login_check
-    
-_security_logout:
-    pattern:  /logout
-    
+security:
+    resource: @UserBundle/Resources/config/routing/security.yml 
+controlpanel:
+    resource: @UserBundle/Resources/config/routing/controlpanel.yml
+    prefix: /cp  

@@ -14,5 +14,5 @@ $container->setParameter('mailer_password', 	'');
 
 $container->setParameter('locale', 				'en');
 
-$container->setParameter('csrf_secret', 		'xyxyxyxyxyxy');
+$container->setParameter('csrf_secret', 		'roflcopter');
 

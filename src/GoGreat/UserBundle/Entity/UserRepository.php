@@ -26,4 +26,17 @@ class UserRepository extends EntityRepository implements UserProviderInterface
 	{
 		return $class === $this->getClass();
 	}
+	
+	/**
+	 * persist an instance of UserInterface with the entity_manager
+	 * 
+	 * @param UserInterface $item
+	 */
+	public function persist(UserInterface $item)
+	{		
+		$em = $this->getEntityManager();
+
+		$em->persist($item);
+		$em->flush();
+	}
 }

@@ -1,0 +1,13 @@
+parameters:
+    menu.loggedin.class:      GoGreat\UserBundle\Menu\LoggedInMenu
+    
+services:
+   menu.loggedin:
+      class:        %menu.loggedin.class%       
+      scope:        request
+      tags:
+         -  { name: menu, alias: loggedin }
+      arguments: 
+         request:        "@request"
+         router:         "@router"
+         entity_manager: "@doctrine.orm.entity_manager"

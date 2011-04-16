@@ -1,0 +1,7 @@
+edit_profile:
+    pattern:  /edit
+    defaults: { _controller: UserBundle:Profile:edit }
+    
+show_profile:
+    pattern:  /show
+    defaults: { _controller: UserBundle:Profile:show }
