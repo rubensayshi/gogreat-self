@@ -25,7 +25,7 @@ class ControlPanelController extends Controller
     	if(!$user)
 			throw new NotFoundHttpException('No valid user login found.');	
 		
-        return $this->render('UserBundle:ControlPanel:index.html.php', array(
+        return $this->render('UserBundle:ControlPanel:index.html.twig', array(
         	'user'		=> $user,
         ));
 	}

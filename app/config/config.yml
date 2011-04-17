@@ -71,4 +71,4 @@ swiftmailer:
 
 # Enable menu helper
 knplabs_menu:
-    templating: true
+    twig: true

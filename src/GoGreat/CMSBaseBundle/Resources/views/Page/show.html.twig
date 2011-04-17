@@ -1,0 +1,15 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% block _content %}	
+	<div class="editable_container">
+		{% if admin %}
+			<div class="admin">
+				<a href="#edit" class="editable_edit"> <img src="{{ asset('images/icons/page_edit.png') }}" /> </a>
+				<a href="#delete"> <img src="{{ asset('images/icons/page_delete.png') }}" /> </a>
+			</div>
+		{% endif %}
+		<h3 class="editable">{% block _title %} {{ page.title}} {% endblock %}</h3>
+		
+		<div class="editable" style="min-height: 300px;">{{ page.content }}</div>
+	</div>
+{% endblock %}

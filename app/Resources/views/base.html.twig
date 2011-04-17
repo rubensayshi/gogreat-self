@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block _title %}[_title]{% endblock %}</title>
+		<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+		
+		{% block _javascript_head %}
+			<script type="text/javascript" src="{{ asset('js/vendor/jquery/jquery-1.5.2.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/vendor/jquery/sizzle.js') }}"></script>
+		
+		{% endblock %}
+		
+    </head>
+    <body>
+    	<div class="container">
+    		<div class="header">
+    			<div class="title font"><h1>WEBSITE</h1></div>
+    			<div class="menu">{{ menu('main') }}</div>
+    		</div>
+    		<div class="content">
+    			<div class="content-inner">{% block _content %}{% endblock %}</div>
+    			<div class="content-sidebar">{% render "CMSBaseBundle:Sidebar:index" %}</div>
+    			<div class="clearfix"></div>
+    		</div>
+    	</div>        
+    </body>
+</html>

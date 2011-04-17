@@ -23,7 +23,7 @@ class ProfileController extends Controller
 	{				
 		$user = $this->getLoggedInUser();
 		
-		return $this->render('UserBundle:Profile:show.html.php', array(
+		return $this->render('UserBundle:Profile:show.html.twig', array(
 			'user'		=> $user,
 		));
 	}
@@ -42,7 +42,7 @@ class ProfileController extends Controller
         			->persist($user);
 		}
 
-		return $this->render('UserBundle:Profile:edit.html.php', array(
+		return $this->render('UserBundle:Profile:edit.html.twig', array(
 			'form'		=> $form,
 			'user'		=> $user,
 		));

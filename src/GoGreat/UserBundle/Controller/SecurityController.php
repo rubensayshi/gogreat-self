@@ -24,7 +24,7 @@ class SecurityController extends Controller
 			$error = $this->getRequest()->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
 		}
 
-		return $this->render('UserBundle:Security:login.html.php', array(
+		return $this->render('UserBundle:Security:login.html.twig', array(
             'last_username' => $this->getRequest()->getSession()->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,
 		));

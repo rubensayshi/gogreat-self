@@ -1,0 +1,24 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% block _content %}
+	<h3>{% block _title %}Control Panel :: Edit Profile{% endblock %}</h3>
+	
+	Edit your profile `{{ user.username }}`.
+	<form action="#" method="post" {{ form_enctype(form) }}>
+		{{ form_errors(form) }}
+		
+		{% for field in form %}
+			{% if not field.ishidden %}
+				<div>
+					{{ form_errors(field) }}
+					{{ form_label(field) }}
+					{{ form_field(field) }}
+				</div>
+			{% endif %}
+		{% endfor %}
+		
+		{{ form_hidden(form) }}
+			
+	    <input type="submit" />
+	</form>
+{% endblock %}

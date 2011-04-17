@@ -1,0 +1,10 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% block _content %}
+	<h3>{% block _title %}Control Panel :: Profile{% endblock %}</h3>
+	
+	Welcome to your profile `{{ user.username }}`.
+	<p>
+		Acording to my ohsoawesome data your email is: {{ user.email }}. <br />
+	</p>
+{% endblock %}

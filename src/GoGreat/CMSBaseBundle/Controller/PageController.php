@@ -42,7 +42,7 @@ class PageController extends Controller
         	
         $admin = ($this->getLoggedInUser() && in_array('ROLE_ADMIN', $this->getLoggedInUser()->getRoles()));
     	
-        return $this->render('CMSBaseBundle:Page:show.html.php', array(
+        return $this->render('CMSBaseBundle:Page:show.html.twig', array(
         	'page'				=> $page,
         	'admin'				=> $admin,
         ));

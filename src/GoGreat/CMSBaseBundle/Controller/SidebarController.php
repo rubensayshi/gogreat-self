@@ -11,7 +11,7 @@ class SidebarController extends Controller
     	$user = ($this->get('security.context')->getToken()) ? $this->get('security.context')->getToken()->getUser() : null;
     	$user = (is_object($user) ? $user : null);
     	    	
-        return $this->render('CMSBaseBundle:Sidebar:index.html.php', array(
+        return $this->render('CMSBaseBundle:Sidebar:index.html.twig', array(
         	'user'		=> $user,
         ));
     }
