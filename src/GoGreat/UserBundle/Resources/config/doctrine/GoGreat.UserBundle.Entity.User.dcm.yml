@@ -9,7 +9,6 @@ GoGreat\UserBundle\Entity\User:
       length: 45
       fixed: false
       nullable: true
-      unique: true
     password:
       type: string
       length: 45
@@ -19,5 +18,8 @@ GoGreat\UserBundle\Entity\User:
       type: string
       length: 100
       fixed: false
+      nullable: true
+    roles:
+      type: array
       nullable: true
   lifecycleCallbacks: {  }

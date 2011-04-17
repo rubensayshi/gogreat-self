@@ -9,6 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class PageController extends Controller
 {
 	/**
+	 * @return GoGreat\UserBundle\Entity\User
+	 */
+	private function getLoggedInUser()
+	{    
+		$user = ($this->get('security.context')->getToken()) ? $this->get('security.context')->getToken()->getUser() : null;
+    	$user = (is_object($user) ? $user : null);
+    	
+		return $user;
+	}
+	
+	/**
 	 * @return Symfony\Component\HttpFoundation\Request
 	 */
 	protected function getRequest() { return $this->get('request'); }
@@ -24,14 +35,16 @@ class PageController extends Controller
     	
     	$page = $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\Page')
-							->findBySlug($slug);
-		$page = reset($page);
+							->findOneBySlug($slug);
 		
     	if(!$page)
         	throw new Exception\NotFoundHttpException('The page does not exist.');
+        	
+        $admin = ($this->getLoggedInUser() && in_array('ROLE_ADMIN', $this->getLoggedInUser()->getRoles()));
     	
         return $this->render('CMSBaseBundle:Page:show.html.php', array(
         	'page'				=> $page,
+        	'admin'				=> $admin,
         ));
     }
 }

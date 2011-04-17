@@ -4,6 +4,8 @@
 <?php echo "Control Panel :: Profile"; ?>
 <?php $view['slots']->stop() ?>
 
+<h3><?php $view['slots']->output('_title', '[_title]') ?></h3>
+
 Welcome to your profile `<?php echo $user->getUsername() ?>`. 
 
 <p>

@@ -4,6 +4,8 @@
 <?php echo "Control Panel :: Edit Profile"; ?>
 <?php $view['slots']->stop() ?>
 
+<h3><?php $view['slots']->output('_title', '[_title]') ?></h3>
+
 Edit your profile `<?php echo $user->getUsername() ?>`.
 <form action="#" method="post" <?php echo $view['form']->enctype($form) ?>>
     <?php echo $view['form']->errors($form) ?>

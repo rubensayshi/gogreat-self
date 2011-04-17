@@ -13,7 +13,7 @@ $loader->registerNamespaces(array(
     'Assetic'          					=> __DIR__.'/../vendor/assetic/src',
     'Knplabs'                    	    => __DIR__.'/../vendor/bundles',
     'GoGreat\\SymfonyWrapper'			=> __DIR__.'/../vendor/gogreat/src', 
-    'GoGreat'          					=> __DIR__.'/../src',
+    'GoGreat'          					=> array(__DIR__.'/../src', __DIR__.'/../vendor/bundles'),
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' 					=> __DIR__.'/../vendor/twig-extensions/lib',

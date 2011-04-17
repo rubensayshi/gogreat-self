@@ -24,6 +24,11 @@ class User implements UserInterface
      */
     private $email;
 
+    /**
+     * @var array $roles
+     */
+    private $roles;
+
 
     /**
      * Set username
@@ -84,12 +89,27 @@ class User implements UserInterface
     {
         return $this->email;
     }
-    
-    function getRoles()
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     */
+    public function setRoles($roles)
     {
-    	return array('ROLE_ADMIN');
+        $this->roles = $roles;
     }
-    
+
+    /**
+     * Get roles
+     *
+     * @return array $roles
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+ 
     function getSalt()
     {
     	return '';

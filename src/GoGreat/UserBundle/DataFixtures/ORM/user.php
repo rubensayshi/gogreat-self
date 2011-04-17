@@ -15,7 +15,7 @@ class LoadUserData extends ContainerAware implements FixtureInterface
 			'username'	=> 'ruben',
 			'password'	=> 'ruben',
 			'email'		=> 'rubensayshi@gmail.com',
-			'roles'		=> array(),
+			'roles'		=> array('ROLE_ADMIN'),
 		),
 	);
 	
@@ -27,7 +27,7 @@ class LoadUserData extends ContainerAware implements FixtureInterface
 			$user->setUsername($data['username']);
 			$user->setPassword($data['password']);
 			$user->setEmail($data['email']);
-			//$user->setRoles($data['roles']);
+			$user->setRoles($data['roles']);
 
 			$manager->getRepository('GoGreat\UserBundle\Entity\User')->persist($user);
 		}

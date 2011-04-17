@@ -4,4 +4,6 @@
 <?php echo "Control Panel"; ?>
 <?php $view['slots']->stop() ?>
 
+<h3><?php $view['slots']->output('_title', '[_title]') ?></h3>
+
 Welcome to your control panel `<?php echo $user->getUsername() ?>`.

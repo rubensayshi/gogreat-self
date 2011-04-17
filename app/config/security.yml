@@ -37,7 +37,7 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         
         # Secured part of the site 
-        - { path: ^/page/.*, role: ROLE_USER }
+        - { path: ^/cp/.*, role: ROLE_USER }
         
         # 
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }

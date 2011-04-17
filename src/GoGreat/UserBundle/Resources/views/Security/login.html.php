@@ -4,6 +4,8 @@
 <?php echo "Login"; ?>
 <?php $view['slots']->stop() ?>
 
+<h3><?php $view['slots']->output('_title', '[_title]') ?></h3>
+
 <?php if ($error): ?>
     <div><?php echo $error->getMessage() ?></div>
 <?php endif; ?>

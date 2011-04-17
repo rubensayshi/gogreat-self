@@ -76,11 +76,13 @@ install_git twig-extensions https://github.com/fabpot/Twig-extensions.git
 install_git monolog https://github.com/Seldaek/monolog.git
 
 # GoGreat SymfonyWrapper
-install_git gogreat https://rubensayshi@github.com/rubensayshi/symfony-wrapper.git
+install_git gogreat git://github.com/rubensayshi/symfony-wrapper.git
 
-# MenuBundle
+# Knplabs bundles
 mkdir -p $BUNDLES/Knplabs/Bundle
 cd $BUNDLES/Knplabs/Bundle
+
+# MenuBundle
 install_git MenuBundle git://github.com/knplabs/MenuBundle.git
 
 # Symfony bundles
@@ -89,6 +91,15 @@ cd $BUNDLES/Symfony/Bundle
 
 # WebConfiguratorBundle
 install_git WebConfiguratorBundle https://github.com/symfony/WebConfiguratorBundle.git
+
+# GoGreat bundles
+mkdir -p $BUNDLES/GoGreat
+cd $BUNDLES/GoGreat
+
+# WebConfiguratorBundle
+install_git AlohaBundle git://github.com/rubensayshi/AlohaBundle.git
+
+
 
 # Update the bootstrap files
 $DIR/bin/build_bootstrap.php

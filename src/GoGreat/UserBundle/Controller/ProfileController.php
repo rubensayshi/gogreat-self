@@ -9,17 +9,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ProfileController extends Controller
 {
 	/**
-	 * @throws NotFoundHttpException
 	 * @return GoGreat\UserBundle\Entity\User
 	 */
 	private function getLoggedInUser()
-	{
+	{    
 		$user = ($this->get('security.context')->getToken()) ? $this->get('security.context')->getToken()->getUser() : null;
-		$user = (is_object($user) ? $user : null);
-		
-		if(!$user)
-			throw new NotFoundHttpException('No valid user login found.');
-			
+    	$user = (is_object($user) ? $user : null);
+    	
 		return $user;
 	}
 	
