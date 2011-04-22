@@ -46,7 +46,6 @@ class Page
     public function setTitle($title)
     {
         $this->title = $title;
-        $this->setSlug($this->getTitle());
     }
 
     /**
@@ -100,5 +99,15 @@ class Page
     public function getContent()
     {
         return $this->content;
+    }
+    
+    /**
+     * Get menu identifier
+     * 
+     * @return string
+     */
+    public function getMenuIdentifier()
+    {
+    	return "page_{$this->getSlug()}";
     }
 }

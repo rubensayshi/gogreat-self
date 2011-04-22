@@ -28,6 +28,7 @@ class LoadCMSBasePageData extends ContainerAware implements FixtureInterface
 				$item->setTitle($page->getTitle());
 				$item->setRouting('page');
 				$item->setArguments(array('slug' => $page->getSlug()));
+				$item->setIdentifier($page->getMenuIdentifier());
 	
 				$manager->getRepository('GoGreat\CMSBaseBundle\Entity\MenuItem')->persist($item);
 				$menuCnt++;

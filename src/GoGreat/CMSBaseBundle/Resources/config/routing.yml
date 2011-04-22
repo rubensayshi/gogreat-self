@@ -7,5 +7,13 @@ hello:
     defaults: { _controller: CMSBaseBundle:Frontpage:hello }
 
 page:
-    pattern:  /page/{slug}
-    defaults: { _controller: CMSBaseBundle:Page:show }
+    pattern:  /page/{slug}.{_format}
+    defaults: { _controller: CMSBaseBundle:Page:show, _format: html }
+    
+save_page:
+    pattern:  admin/page/{slug}/save.{_format}
+    defaults: { _controller: CMSBaseBundle:Page:save, _format: json }
+    
+delete_page:
+    pattern:  admin/page/{slug}/delete.{_format}
+    defaults: { _controller: CMSBaseBundle:Page:delete, _format: json }

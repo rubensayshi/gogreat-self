@@ -54,5 +54,6 @@ h3							{ font-size: 150% }
 .content-sidebar .menu ul	{ list-style: dotted; margin: 10px 0px 0px 0px; }
 .content-sidebar .menu ul li{ margin: 0px 0px 0px 15px; }
 .clearfix					{ clear: both; height: 0px; }
-.editable_container			{ position: relative }
-.editable_container .admin	{ position: absolute; top: 5px; right: 5px; }
+
+.editables_container					{ position: relative }
+.editables_container .editables_admin	{ position: absolute; top: 5px; right: 5px; }

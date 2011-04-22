@@ -1,15 +1,25 @@
 {% extends 'CMSBaseBundle::layout.html.twig' %}
 
 {% block _content %}	
-	<div class="editable_container">
+	<div class="editables_container">
 		{% if admin %}
-			<div class="admin">
-				<a href="#edit" class="editable_edit"> <img src="{{ asset('images/icons/page_edit.png') }}" /> </a>
-				<a href="#delete"> <img src="{{ asset('images/icons/page_delete.png') }}" /> </a>
+			<div class="editables_admin">
+				<a href="#edit" 	
+					class="editables_button editables_edit"> 	
+						<img src="{{ asset('images/icons/page_edit.png') }}" /> 		
+				</a>
+				<a href="{{ path('save_page',  { 'slug': page.slug }) }}" 	
+					class="editables_button editables_save"> 	
+						<img src="{{ asset('images/icons/page_save.png') }}" /> 		
+				</a>
+				<a href="{{ path('delete_page',  { 'slug': page.slug }) }}" 	
+					class="editables_button editables_delete"> 	
+						<img src="{{ asset('images/icons/page_delete.png') }}" /> 		
+				</a>
 			</div>
 		{% endif %}
-		<h3 class="editable">{% block _title %} {{ page.title}} {% endblock %}</h3>
+		<h3 class="editables" data-field="title">{% block _title %} {{ page.title | raw }} {% endblock %}</h3>
 		
-		<div class="editable" style="min-height: 300px;">{{ page.content }}</div>
+		<div class="editables" data-field="content" style="min-height: 300px;">{{ page.content | raw }}</div>
 	</div>
 {% endblock %}
