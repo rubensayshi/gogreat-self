@@ -27,6 +27,15 @@ class Page
      */
     private $content;
 
+    /**
+     * @var GoGreat\CMSBaseBundle\Entity\Block
+     */
+    private $blocks;
+
+    public function __construct()
+    {
+        $this->blocks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -99,6 +108,26 @@ class Page
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Add blocks
+     *
+     * @param GoGreat\CMSBaseBundle\Entity\Block $blocks
+     */
+    public function addBlocks(\GoGreat\CMSBaseBundle\Entity\Block $blocks)
+    {
+        $this->blocks[] = $blocks;
+    }
+
+    /**
+     * Get blocks
+     *
+     * @return Doctrine\Common\Collections\Collection $blocks
+     */
+    public function getBlocks()
+    {
+        return $this->blocks;
     }
     
     /**

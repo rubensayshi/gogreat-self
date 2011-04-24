@@ -61,7 +61,7 @@ install_git doctrine-dbal https://github.com/doctrine/dbal.git 2.0.4
 install_git doctrine-common https://github.com/doctrine/common.git 2.0.2
 
 # Doctrine Fxitures
-install_git doctrine-data-fixtures git://github.com/doctrine/data-fixtures.git
+install_git doctrine-fixtures https://github.com/doctrine/data-fixtures.git
 
 # Swiftmailer
 install_git swiftmailer https://github.com/swiftmailer/swiftmailer.git origin/4.1
@@ -90,8 +90,10 @@ mkdir -p $BUNDLES/Symfony/Bundle
 cd $BUNDLES/Symfony/Bundle
 
 # WebConfiguratorBundle
-install_git WebConfiguratorBundle https://github.com/symfony/WebConfiguratorBundle.git
+install_git DoctrineFixturesBundle https://github.com/symfony/DoctrineFixturesBundle.git
 
+# DoctrineFixturesBundle
+install_git doctrine-fixtures https://github.com/doctrine/data-fixtures.git
 # GoGreat bundles
 mkdir -p $BUNDLES/GoGreat
 cd $BUNDLES/GoGreat

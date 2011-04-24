@@ -23,5 +23,9 @@ GoGreat\CMSBaseBundle\Entity\Page:
     content:
       type: text
       fixed: false
-      nullable: true  
+      nullable: true   
+  oneToMany:
+    blocks:
+      targetEntity: Block
+      mappedBy: page
   lifecycleCallbacks: {  }
