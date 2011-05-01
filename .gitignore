@@ -8,3 +8,4 @@
 /vendor/
 !/web/js/vendor*
 /.externalToolBuilders/
+/cnf/passwd/

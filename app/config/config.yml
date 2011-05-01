@@ -11,7 +11,7 @@ framework:
     error_handler: null
     csrf_protection:
         enabled: true
-        secret: %csrf_secret%
+    secret: %csrf_secret%
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
     templating:    { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
