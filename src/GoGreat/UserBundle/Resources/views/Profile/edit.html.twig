@@ -6,18 +6,12 @@
 	Edit your profile `{{ user.username }}`.
 	<form action="#" method="post" {{ form_enctype(form) }}>
 		{{ form_errors(form) }}
+				
+   		{{ form_row(form.username) }}
+    	{{ form_row(form.password) }}
+    	{{ form_row(form.email) }}
 		
-		{% for field in form %}
-			{% if not field.ishidden %}
-				<div>
-					{{ form_errors(field) }}
-					{{ form_label(field) }}
-					{{ form_field(field) }}
-				</div>
-			{% endif %}
-		{% endfor %}
-		
-		{{ form_hidden(form) }}
+		{{ form_rest(form) }}
 			
 	    <input type="submit" />
 	</form>
