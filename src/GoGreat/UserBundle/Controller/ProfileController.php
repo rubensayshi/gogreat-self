@@ -4,7 +4,7 @@ namespace GoGreat\UserBundle\Controller;
 
 use Symfony\Component\Form;
 
-use GoGreat\UserBundle\Form\ProfileType;
+use GoGreat\UserBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -36,7 +36,7 @@ class ProfileController extends Controller
 	public function editAction()
 	{
 		$user 		= $this->getLoggedInUser();
-		$form 		= $this->get('form.factory')->create(new ProfileType());
+		$form 		= $this->get('form.factory')->create(new UserType());
 		$form->setData($user);
 		$request 	= $this->get('request');
 		if ($request->getMethod() == 'POST') {

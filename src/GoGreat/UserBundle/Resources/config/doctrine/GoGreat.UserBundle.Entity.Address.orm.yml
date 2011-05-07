@@ -40,9 +40,9 @@ GoGreat\UserBundle\Entity\Address:
       targetEntity: User
       cascade: { }
       mappedBy: null
-      inversedBy: address
+      inversedBy: addresses
       joinColumns:
-        user_id:
-          referencedColumnName: id
+        user:
+          referencedColumnName: username
       orphanRemoval: false
   lifecycleCallbacks: {  }

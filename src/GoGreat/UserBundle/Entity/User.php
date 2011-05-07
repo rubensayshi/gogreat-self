@@ -32,7 +32,7 @@ class User implements UserInterface
     /**
      * @var GoGreat\UserBundle\Entity\Address
      */
-    private $adresses;
+    private $addresses;
     
 
     /**
@@ -131,22 +131,22 @@ class User implements UserInterface
     }
     
     /**
-     * Add adresses
+     * Add addresses
      *
-     * @param GoGreat\UserBundle\Entity\Address $adresses
+     * @param GoGreat\UserBundle\Entity\Address $addresses
      */
-    public function addAdresses(\GoGreat\UserBundle\Entity\Address $adresses)
+    public function addAddresses(\GoGreat\UserBundle\Entity\Address $addresses)
     {
-        $this->adresses[] = $adresses;
+        $this->addresses[] = $addresses;
     }
 
     /**
-     * Get adresses
+     * Get addresses
      *
-     * @return Doctrine\Common\Collections\Collection $adresses
+     * @return Doctrine\Common\Collections\Collection $addresses
      */
-    public function getAdresses()
+    public function getAddresses()
     {
-        return $this->adresses;
+        return $this->addresses;
     }
 }
