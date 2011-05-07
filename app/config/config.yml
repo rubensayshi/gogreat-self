@@ -8,10 +8,9 @@ imports:
         
 framework:
     charset:       UTF-8
-    error_handler: null
     csrf_protection:
         enabled: true
-        secret: %csrf_secret%
+    secret: %csrf_secret%
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
     templating:    { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
@@ -50,17 +49,16 @@ doctrine:
                password: %database.master.pass%
 
     orm:
+        auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
         default_entity_manager: default
-        entity_managers:
-            default: 
-                mappings:
-                    CMSBaseBundle: 
-                        type: yml
-                        dir: Resources/config/doctrine
-                    UserBundle: 
-                        type: yml
-                        dir: Resources/config/doctrine
+        mappings:
+            CMSBaseBundle: 
+                type: yml
+                dir: Resources/config/doctrine
+            UserBundle: 
+                type: yml
+                dir: Resources/config/doctrine
 
 # Swiftmailer Configuration
 swiftmailer:
