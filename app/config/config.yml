@@ -7,8 +7,8 @@ imports:
         resource: @UserBundle/Resources/config/menu.yml  
         
 framework:
+    secret:        %secret%
     charset:       UTF-8
-    error_handler: null
     csrf_protection:
         enabled: true
     secret: %csrf_secret%
@@ -48,19 +48,18 @@ doctrine:
                dbname:   %database.master.name%
                user:     %database.master.user%
                password: %database.master.pass%
-
     orm:
+        auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
-        default_entity_manager: default
-        entity_managers:
-            default: 
-                mappings:
-                    CMSBaseBundle: 
-                        type: yml
-                        dir: Resources/config/doctrine
-                    UserBundle: 
-                        type: yml
-                        dir: Resources/config/doctrine
+        auto_mapping: true
+#        default_entity_manager: default
+#        mappings:
+#            CMSBaseBundle: 
+#                type: yml
+#                dir: Resources/config/doctrine
+#            UserBundle: 
+#                type: yml
+#                dir: Resources/config/doctrine
 
 # Swiftmailer Configuration
 swiftmailer:

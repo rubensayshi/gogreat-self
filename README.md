@@ -11,7 +11,7 @@ Symfony Standard Edition comes pre-configured with the following bundles:
  * DoctrineBundle
  * TwigBundle
  * SwiftmailerBundle
- * ZendBundle
+ * MonologBundle
  * AsseticBundle
  * WebProfilerBundle (in dev/test env)
  * SymfonyWebConfiguratorBundle (in dev/test env)
@@ -20,8 +20,9 @@ Symfony Standard Edition comes pre-configured with the following bundles:
 Installation from an Archive
 ----------------------------
 
-If you have downloaded an archive, unpack it somewhere under your web server
-root directory.
+The easiest way to get started is to download an archive with vendors included
+(http://symfony.com/download). Unpack it somewhere under your web server root
+directory and you're done.
 
 If you have downloaded an archive without the vendors, run the
 `bin/vendors.sh` script (`git` must be installed on your machine). If you
@@ -36,8 +37,6 @@ distribution. If you still want to use Git, your are on your own.
 Run the following scripts:
 
  * `bin/vendors.sh` (use `--min` if you don't want all the history)
- * `bin/build_bootstrap.php`
- * `app/console assets:install web/`
 
 Configuration
 -------------
@@ -53,10 +52,10 @@ The distribution is configured with the following defaults:
  * Annotations for everything are enabled.
 
 A default bundle, `AcmeDemoBundle`, shows you Symfony2 in action. After
-playing with it, you can remove it by following these steps :
+playing with it, you can remove it by following these steps:
+
  * delete the `src/Acme` directory.
  * remove the routing entry in `app/config/routing.yml`.
- * remove the `Acme` reference in `app/config/config.yml`.
  * remove the AcmeBundle from the registered bundles in `app/AppKernel.php`
  * remove the Acme registered namespace in `app/autoload.php`
 

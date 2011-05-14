@@ -29,6 +29,11 @@ class User implements UserInterface
      */
     private $roles;
 
+    /**
+     * @var GoGreat\UserBundle\Entity\Address
+     */
+    private $addresses;
+    
 
     /**
      * Set username
@@ -123,5 +128,25 @@ class User implements UserInterface
     function equals(UserInterface $user)
     {
     	return $user->getUsername() == $this->getUsername();
+    }
+    
+    /**
+     * Add addresses
+     *
+     * @param GoGreat\UserBundle\Entity\Address $addresses
+     */
+    public function addAddresses(\GoGreat\UserBundle\Entity\Address $addresses)
+    {
+        $this->addresses[] = $addresses;
+    }
+
+    /**
+     * Get addresses
+     *
+     * @return Doctrine\Common\Collections\Collection $addresses
+     */
+    public function getAddresses()
+    {
+        return $this->addresses;
     }
 }

@@ -1,0 +1,48 @@
+GoGreat\UserBundle\Entity\Address:
+  type: entity
+  table: address
+  repositoryClass: GoGreat\UserBundle\Entity\AddressRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    street:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    zipcode:
+      type: string
+      length: 40
+      fixed: false
+      nullable: false
+    city:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    city:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    country:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+  manyToOne:
+    user:
+      targetEntity: User
+      cascade: { }
+      mappedBy: null
+      inversedBy: addresses
+      joinColumns:
+        user:
+          referencedColumnName: username
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

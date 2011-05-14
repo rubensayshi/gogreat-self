@@ -22,4 +22,8 @@ GoGreat\UserBundle\Entity\User:
     roles:
       type: array
       nullable: true
+  oneToMany:
+    addresses:
+      targetEntity: Address
+      mappedBy: user
   lifecycleCallbacks: {  }
