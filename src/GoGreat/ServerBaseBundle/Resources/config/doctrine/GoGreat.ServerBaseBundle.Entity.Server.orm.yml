@@ -1,0 +1,22 @@
+GoGreat\ServerBaseBundle\Entity\Server:
+  type: entity
+  table: server
+  repositoryClass: GoGreat\ServerBaseBundle\Entity\ServerRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    hostname:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false  
+  oneToMany:
+    websites:
+      targetEntity: Website
+      mappedBy: server
+  lifecycleCallbacks: {  }

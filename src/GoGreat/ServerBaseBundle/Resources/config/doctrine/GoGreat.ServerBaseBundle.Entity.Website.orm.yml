@@ -1,0 +1,36 @@
+GoGreat\ServerBaseBundle\Entity\Website:
+  type: entity
+  table: website
+  repositoryClass: GoGreat\ServerBaseBundle\Entity\WebsiteRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false  
+  manyToOne:
+    server:
+      targetEntity: Server
+      cascade: { }
+      mappedBy: null
+      inversedBy: server
+      joinColumns:
+        server_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  oneToMany:
+    domains:
+      targetEntity: Domain
+      mappedBy: website
+  manyToMany:
+    modules:
+      targetEntity: Module
+      mappedBy: websites
+  lifecycleCallbacks: {  }
