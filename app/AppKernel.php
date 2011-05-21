@@ -23,8 +23,10 @@ class AppKernel extends Kernel
       		
        		new GoGreat\AlohaBundle\AlohaBundle(),
        		
+       		new GoGreat\ServerBaseBundle\ServerBaseBundle(),
        		new GoGreat\CMSBaseBundle\CMSBaseBundle(),
        		new GoGreat\UserBundle\UserBundle(),
+       		new GoGreat\SiteWizardBundle\SiteWizardBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

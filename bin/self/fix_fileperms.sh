@@ -5,4 +5,4 @@ if [ -z "$ROOT" ]; then
 	export ROOT
 fi
 
-chmod 0777 $ROOT/app/cache $ROOT/app/logs
+chmod -R 0777 $ROOT/app/cache $ROOT/app/logs

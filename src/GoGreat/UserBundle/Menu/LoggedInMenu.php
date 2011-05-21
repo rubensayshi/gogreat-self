@@ -23,5 +23,6 @@ class LoggedInMenu extends Menu
 		$cp = $this->addChild('Control Panel', $router->generate('controlpanel'));
 		$cp->addChild('My Profile', $router->generate('show_profile'));
 		$cp->addChild('Edit Profile', $router->generate('edit_profile'));
+		$cp->addChild('New Site', $router->generate('new_site_wizard'));
 	}
 }

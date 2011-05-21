@@ -3,3 +3,5 @@ CMSBaseBundle:
     resource: "@CMSBaseBundle/Resources/config/routing.yml"
 UserBundle:
     resource: "@UserBundle/Resources/config/routing.yml"
+SiteWizardBundle:
+    resource: "@SiteWizardBundle/Resources/config/routing.yml"
