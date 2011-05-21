@@ -1,0 +1,3 @@
+new_site_wizard:
+    pattern:  /new/site/wizard
+    defaults: { _controller: SiteWizardBundle:SiteWizard:new }
