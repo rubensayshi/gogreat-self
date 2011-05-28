@@ -1,0 +1,10 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% block _content %}
+	<h3>{% block _title %}Site overview{% endblock %}</h3>
+	<ul>
+		{% for website in websites %}
+			<li><a href="{{ path('site_edit', { 'id' : website.id }) }}">{{ website.name }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
