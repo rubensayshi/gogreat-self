@@ -6,12 +6,7 @@ use GoGreat\BaseBundle\Controller\BaseController;
 use Symfony\Component\Security\Core\SecurityContext;
 
 class SecurityController extends BaseController
-{
-	/**
-	 * @return Symfony\Component\HttpFoundation\Request
-	 */
-	protected function getRequest() { return $this->get('request'); }
-	
+{	
 	public function loginAction()
 	{		
 		// get the error if any (works with forward and redirect -- see below)

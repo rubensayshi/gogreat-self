@@ -21,8 +21,10 @@ class LoggedInMenu extends Menu
 
 		$this->addChild('Logout', $router->generate('_security_logout'));
 		$cp = $this->addChild('Control Panel', $router->generate('controlpanel'));
-		$cp->addChild('My Profile', $router->generate('show_profile'));
-		$cp->addChild('Edit Profile', $router->generate('edit_profile'));
-		$cp->addChild('New Site', $router->generate('new_site_wizard'));
+			$cp->addChild('My Profile', $router->generate('show_profile'));
+			$cp->addChild('Edit Profile', $router->generate('edit_profile'));
+		
+			$cp->addChild('My Sites', $router->generate('site_overview'));
+			$cp->addChild('New Site', $router->generate('site_new'));
 	}
 }

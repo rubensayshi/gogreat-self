@@ -18,11 +18,8 @@ GoGreat\ServerBaseBundle\Entity\Domain:
   manyToOne:
     website:
       targetEntity: Website
-      cascade: { }
-      mappedBy: null
-      inversedBy: website
+      inversedBy: domains
       joinColumns:
         website_id:
           referencedColumnName: id
-      orphanRemoval: false
   lifecycleCallbacks: {  }

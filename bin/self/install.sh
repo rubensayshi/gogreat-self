@@ -9,3 +9,4 @@ $ROOT/app/console doctrine:database:create
 $ROOT/app/console doctrine:schema:create
 $ROOT/app/console doctrine:fixtures:load
 $ROOT/app/console cache:clear
+$ROOT/bin/self/fix_fileperms.sh

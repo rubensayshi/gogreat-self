@@ -1,15 +1,15 @@
 <?php
 
-namespace GoGreat\SiteWizardBundle\Controller;
+namespace GoGreat\SiteManagerBundle\Controller;
 
 use GoGreat\BaseBundle\Controller\BaseController;
 use GoGreat\ServerBaseBundle\Form\WebsiteType;
 use GoGreat\ServerBaseBundle\Entity\Website;
 
-class SiteWizardController extends BaseController
+class SiteManagerController extends BaseController
 {
     public function newAction()
-    {
+    {   	
     	$form 		= $this->get('form.factory')->create(new WebsiteType());
 		$request 	= $this->get('request');
 		$website	= new Website();
@@ -19,12 +19,18 @@ class SiteWizardController extends BaseController
 			$form->bindRequest($request);
 
 			if ($form->isValid()) {
-				$em->persist($website);
+				$this->getEntityManager()->persist($website);
+				$this->getEntityManager()->flush();
 			}
 		}
 		
-        return $this->render('SiteWizardBundle:SiteWizard:new.html.twig', array(
+        return $this->render('SiteManagerBundle:SiteManager:new.html.twig', array(
 				'form'		=> $form->createView(),
 		));
+    }
+    
+    public function overviewAction()
+    {
+    	
     }
 }

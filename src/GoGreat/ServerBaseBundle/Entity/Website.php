@@ -37,7 +37,7 @@ class Website
     public function __construct()
     {
         $this->domains = new \Doctrine\Common\Collections\ArrayCollection();
-    $this->modules = new \Doctrine\Common\Collections\ArrayCollection();
+    	$this->modules = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -75,19 +75,22 @@ class Website
      *
      * @param array[GoGreat\ServerBaseBundle\Entity\Domain]	$domains
      */
-    public function setDomains(array $domains)
+    public function setDomains($domains)
     {
-        $this->domains = $domains;
+    	foreach ($domains as $domain) {
+        	$this->addDomain($domain);
+    	}
     }
 
     /**
      * Add domains
      *
-     * @param GoGreat\ServerBaseBundle\Entity\Domain $domains
+     * @param GoGreat\ServerBaseBundle\Entity\Domain $domain
      */
-    public function addDomains(\GoGreat\ServerBaseBundle\Entity\Domain $domains)
+    public function addDomain(\GoGreat\ServerBaseBundle\Entity\Domain $domain)
     {
-        $this->domains[] = $domains;
+    	$domain->setWebsite($this);
+        $this->domains[] = $domain;
     }
     
     /**
@@ -125,19 +128,21 @@ class Website
      *
      * @param GoGreat\ServerBaseBundle\Entity\Module $modules
      */
-    public function addModules(\GoGreat\ServerBaseBundle\Entity\Module $modules)
+    public function addModule(\GoGreat\ServerBaseBundle\Entity\Module $module)
     {
-        $this->modules[] = $modules;
+        $this->module[] = $module;
     }
 
     /**
      * Set modules
      *
-     * @param array[GoGreat\ServerBaseBundle\Entity\Module]	$modules
+     * @param Collection[GoGreat\ServerBaseBundle\Entity\Module]	$modules
      */
     public function setModules(Collection $modules)
     {
-        $this->modules = $modules;
+    	foreach ($modules as $module) {
+      		$this->addModule($module);
+    	}
     }
 
     /**

@@ -18,13 +18,5 @@ GoGreat\ServerBaseBundle\Entity\Module:
   manyToMany:
     websites:
       targetEntity: Website
-      joinTable: 
-        name: websites_modules
-        joinColumns:
-          website_id:
-            referencedColumnName: id
-        inverseJoinColumns:
-          module_id:
-            referencedColumnName: id
-      orphanRemoval: false
+      mappedBy: modules
   lifecycleCallbacks: {  }

@@ -20,10 +20,13 @@ class BaseController extends Controller
 	 * @return GoGreat\UserBundle\Entity\User
 	 */
 	protected function getLoggedInUser()
-	{    
+	{
 		$user = ($this->get('security.context')->getToken()) ? $this->get('security.context')->getToken()->getUser() : null;
-    	$user = (is_object($user) ? $user : null);
-    	
-		return $user;
+		if(!is_object($user))
+			return null;
+		
+		return $this->get('doctrine.orm.entity_manager')
+					->getRepository('GoGreat\UserBundle\Entity\User')
+					->loadUserByUsername($user->getUsername());
 	}
 }

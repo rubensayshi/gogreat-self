@@ -60,11 +60,11 @@ class Server
     /**
      * Add websites
      *
-     * @param GoGreat\ServerBaseBundle\Entity\Website $websites
+     * @param GoGreat\ServerBaseBundle\Entity\Website $website
      */
-    public function addWebsites(\GoGreat\ServerBaseBundle\Entity\Website $websites)
+    public function addWebsite(\GoGreat\ServerBaseBundle\Entity\Website $website)
     {
-        $this->websites[] = $websites;
+        $this->websites[] = $website;
     }
 
     /**

@@ -8,32 +8,11 @@ use Symfony\Component\HttpKernel\Exception;
 use GoGreat\BaseBundle\Controller\BaseController;
 
 class PageController extends BaseController
-{
-	/**
-	 * @return GoGreat\UserBundle\Entity\User
-	 */
-	private function getLoggedInUser()
-	{    
-		$user = ($this->get('security.context')->getToken()) ? $this->get('security.context')->getToken()->getUser() : null;
-    	$user = (is_object($user) ? $user : null);
-    	
-		return $user;
-	}
-	
+{	
 	private function isAdmin()
 	{
         return ($this->getLoggedInUser() && in_array('ROLE_ADMIN', $this->getLoggedInUser()->getRoles()));
 	}
-	
-	/**
-	 * @return Symfony\Component\HttpFoundation\Request
-	 */
-	protected function getRequest() { return $this->get('request'); }
-
-	/**
-	 * @return Doctrine\ORM\EntityManager
-	 */
-	protected function getEntityManager() { return $this->get('doctrine.orm.entity_manager'); }
 	
     public function showAction($slug)
     {    	

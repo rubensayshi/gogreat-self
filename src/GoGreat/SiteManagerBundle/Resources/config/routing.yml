@@ -1,0 +1,7 @@
+site_new:
+    pattern:  /site/new
+    defaults: { _controller: SiteManagerBundle:SiteManager:new }
+    
+site_overview:
+    pattern:  /site/overview
+    defaults: { _controller: SiteManagerBundle:SiteManager:overview }

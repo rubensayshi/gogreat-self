@@ -137,11 +137,12 @@ class User implements UserInterface
     /**
      * Add addresses
      *
-     * @param GoGreat\UserBundle\Entity\Address $addresses
+     * @param GoGreat\UserBundle\Entity\Address $address
      */
-    public function addAddresses(\GoGreat\UserBundle\Entity\Address $addresses)
+    public function addAddress(\GoGreat\UserBundle\Entity\Address $address)
     {
-        $this->addresses[] = $addresses;
+    	$address->setUser($this);
+        $this->addresses[] = $address;
     }
 
     /**
@@ -157,11 +158,11 @@ class User implements UserInterface
     /**
      * Add websites
      *
-     * @param GoGreat\ServerBaseBundle\Entity\Website $websites
+     * @param GoGreat\ServerBaseBundle\Entity\Website $website
      */
-    public function addWebsites(\GoGreat\ServerBaseBundle\Entity\Website $websites)
+    public function addWebsite(\GoGreat\ServerBaseBundle\Entity\Website $website)
     {
-        $this->websites[] = $websites;
+        $this->websites[] = $website;
     }
 
     /**

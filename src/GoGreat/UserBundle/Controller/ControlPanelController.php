@@ -6,18 +6,7 @@ use GoGreat\BaseBundle\Controller\BaseController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ControlPanelController extends BaseController
-{
-	/**
-	 * @return GoGreat\UserBundle\Entity\User
-	 */
-	private function getLoggedInUser()
-	{    
-		$user = ($this->get('security.context')->getToken()) ? $this->get('security.context')->getToken()->getUser() : null;
-    	$user = (is_object($user) ? $user : null);
-    	
-		return $user;
-	}
-	
+{	
 	public function indexAction()
 	{    	    	
 		$user = $this->getLoggedInUser();
