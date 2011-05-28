@@ -5,6 +5,8 @@ namespace GoGreat\ServerBaseBundle\Entity;
 /**
  * GoGreat\ServerBaseBundle\Entity\Website
  */
+use Doctrine\Common\Collections\Collection;
+
 class Website
 {
     /**
@@ -69,6 +71,16 @@ class Website
     }
 
     /**
+     * Set domains
+     *
+     * @param array[GoGreat\ServerBaseBundle\Entity\Domain]	$domains
+     */
+    public function setDomains(array $domains)
+    {
+        $this->domains = $domains;
+    }
+
+    /**
      * Add domains
      *
      * @param GoGreat\ServerBaseBundle\Entity\Domain $domains
@@ -77,7 +89,7 @@ class Website
     {
         $this->domains[] = $domains;
     }
-
+    
     /**
      * Get domains
      *
@@ -119,6 +131,16 @@ class Website
     }
 
     /**
+     * Set modules
+     *
+     * @param array[GoGreat\ServerBaseBundle\Entity\Module]	$modules
+     */
+    public function setModules(Collection $modules)
+    {
+        $this->modules = $modules;
+    }
+
+    /**
      * Get modules
      *
      * @return Doctrine\Common\Collections\Collection $modules
@@ -126,5 +148,30 @@ class Website
     public function getModules()
     {
         return $this->modules;
+    }
+    /**
+     * @var GoGreat\UserBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param GoGreat\UserBundle\Entity\User $user
+     */
+    public function setUser(\GoGreat\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get user
+     *
+     * @return GoGreat\UserBundle\Entity\User $user
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

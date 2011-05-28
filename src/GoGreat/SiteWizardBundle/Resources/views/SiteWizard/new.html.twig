@@ -1,0 +1,86 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% block _content %}
+	<h3>{% block _title %}Make a site{% endblock %}</h3>
+	
+	<form action="#" method="post" {{ form_enctype(form) }}>
+		{{ form_errors(form) }}
+		
+		{{ form_row(form.name) }}
+		
+   		<br />
+	    <table>
+	        <caption>{{ form_label(form.domains) }}</caption>
+	        <thead>
+	            <tr>
+	                <th>Domain</th>
+	                <th></th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            {% for domain in form.domains %}
+	            <tr>
+	                <td>
+	                    {{ form_widget(domain.domain) }}
+	                    {{ form_errors(domain.domain) }}
+	                </td>
+	            </tr>
+	            {% endfor %}
+	        </tbody>
+	        <tfoot>
+	            <tr>
+	                <td>
+	                    <a href="#">Add</a>
+	                </td>
+	            </tr>
+	        </tfoot>
+	    </table>       
+   		
+   		<br />
+   		<h4>Modules</h4>
+   		{{ form_rest(form.modules) }}
+   		
+		{{ form_rest(form) }}
+			
+   		<br />
+   		<br />
+	    <input type="submit" />
+	</form>
+	<script>
+    var prototype;
+    prototype = $('*[name*="$$name$$"]:first').closest('tr');
+    prototype.find('input, select').attr('disabled', true);
+    prototype.hide();
+    prototype.max = 2;
+
+    var button = prototype.closest('table').find('tfoot').find('a');
+    button.click(function(event) {
+        event.preventDefault();
+
+        var index = prototype.parent().find(' > tr').size() - 1;
+
+        row = prototype.clone(true);
+        row.find('*[disabled]').removeAttr('disabled');
+        row.find('*[name*="$$name$$"]').each(function() {
+
+            var attribute;
+
+            attribute = 'id';
+            $(this).attr(attribute, $(this).attr(attribute).replace(/\$\$name\$\$/g, index));
+
+            attribute = 'name';
+            $(this).attr(attribute, $(this).attr(attribute).replace(/\$\$name\$\$/g, index));
+        });
+        prototype.closest('tbody').append(row);
+        row.show();
+    	
+    	if (prototype.parent().find(' > tr').length == prototype.max+1) {
+    		button.hide();
+    	}
+    });
+
+    if (prototype.parent().find(' > tr').length == 1) {
+        button.click();
+    }
+    </script>
+{% endblock %}

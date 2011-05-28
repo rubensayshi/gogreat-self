@@ -26,4 +26,8 @@ GoGreat\UserBundle\Entity\User:
     addresses:
       targetEntity: Address
       mappedBy: user
+  oneToMany:
+    websites:
+      targetEntity: GoGreat\ServerBaseBundle\Entity\Website
+      mappedBy: user
   lifecycleCallbacks: {  }

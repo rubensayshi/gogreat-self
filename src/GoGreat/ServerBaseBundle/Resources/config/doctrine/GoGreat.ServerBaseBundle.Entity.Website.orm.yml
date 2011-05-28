@@ -25,6 +25,15 @@ GoGreat\ServerBaseBundle\Entity\Website:
         server_id:
           referencedColumnName: id
       orphanRemoval: false
+    user:
+      targetEntity: GoGreat\UserBundle\Entity\User
+      cascade: { }
+      mappedBy: null
+      inversedBy: websites
+      joinColumns:
+        username:
+          referencedColumnName: username
+      orphanRemoval: false
   oneToMany:
     domains:
       targetEntity: Domain

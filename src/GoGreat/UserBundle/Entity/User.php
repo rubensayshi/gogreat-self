@@ -34,6 +34,10 @@ class User implements UserInterface
      */
     private $addresses;
     
+    /**
+     * @var GoGreat\ServerBaseBundle\Entity\Website
+     */
+    private $websites;
 
     /**
      * Set username
@@ -148,5 +152,25 @@ class User implements UserInterface
     public function getAddresses()
     {
         return $this->addresses;
+    }
+
+    /**
+     * Add websites
+     *
+     * @param GoGreat\ServerBaseBundle\Entity\Website $websites
+     */
+    public function addWebsites(\GoGreat\ServerBaseBundle\Entity\Website $websites)
+    {
+        $this->websites[] = $websites;
+    }
+
+    /**
+     * Get websites
+     *
+     * @return Doctrine\Common\Collections\Collection $websites
+     */
+    public function getWebsites()
+    {
+        return $this->websites;
     }
 }

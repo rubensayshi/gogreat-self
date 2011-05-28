@@ -56,6 +56,11 @@ class Module
     {
         return $this->name;
     }
+    
+    public function __toString()
+    {
+    	return $this->getName();
+    }
 
     /**
      * Add websites
