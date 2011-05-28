@@ -2,9 +2,9 @@
 
 namespace GoGreat\CMSBaseBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 
-class FrontpageController extends Controller
+class FrontpageController extends BaseController
 {
 	/**
 	 * @return Symfony\Component\HttpFoundation\Request

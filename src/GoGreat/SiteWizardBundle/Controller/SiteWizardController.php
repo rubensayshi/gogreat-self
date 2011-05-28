@@ -2,9 +2,9 @@
 
 namespace GoGreat\SiteWizardBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 
-class SiteWizardController extends Controller
+class SiteWizardController extends BaseController
 {
     public function newAction()
     {

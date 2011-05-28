@@ -23,6 +23,7 @@ class AppKernel extends Kernel
       		
        		new GoGreat\AlohaBundle\AlohaBundle(),
        		
+       		new GoGreat\BaseBundle\BaseBundle(),
        		new GoGreat\ServerBaseBundle\ServerBaseBundle(),
        		new GoGreat\CMSBaseBundle\CMSBaseBundle(),
        		new GoGreat\UserBundle\UserBundle(),

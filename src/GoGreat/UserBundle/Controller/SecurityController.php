@@ -2,10 +2,10 @@
 
 namespace GoGreat\UserBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 use Symfony\Component\Security\Core\SecurityContext;
 
-class SecurityController extends Controller
+class SecurityController extends BaseController
 {
 	/**
 	 * @return Symfony\Component\HttpFoundation\Request

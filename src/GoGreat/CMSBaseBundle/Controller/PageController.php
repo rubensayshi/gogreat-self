@@ -3,12 +3,11 @@
 namespace GoGreat\CMSBaseBundle\Controller;
 
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 
-class PageController extends Controller
+class PageController extends BaseController
 {
 	/**
 	 * @return GoGreat\UserBundle\Entity\User

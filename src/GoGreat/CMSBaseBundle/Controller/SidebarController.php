@@ -2,9 +2,9 @@
 
 namespace GoGreat\CMSBaseBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 
-class SidebarController extends Controller
+class SidebarController extends BaseController
 {	
     public function indexAction()
     {

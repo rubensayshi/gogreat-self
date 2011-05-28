@@ -2,10 +2,10 @@
 
 namespace GoGreat\UserBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ControlPanelController extends Controller
+class ControlPanelController extends BaseController
 {
 	/**
 	 * @return GoGreat\UserBundle\Entity\User

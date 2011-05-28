@@ -5,10 +5,10 @@ namespace GoGreat\UserBundle\Controller;
 use Symfony\Component\Form;
 
 use GoGreat\UserBundle\Form\UserType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GoGreat\BaseBundle\Controller\BaseController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ProfileController extends Controller
+class ProfileController extends BaseController
 {
 	/**
 	 * @return GoGreat\UserBundle\Entity\User
