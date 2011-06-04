@@ -1,3 +1,4 @@
+
 imports:
     - { resource: parameters.php }
     - { resource: security.yml }
@@ -7,14 +8,13 @@ imports:
         resource: @UserBundle/Resources/config/menu.yml  
         
 framework:
-    secret:        %secret%
-    charset:       UTF-8
-    csrf_protection:
-        enabled: true
-    secret: %csrf_secret%
-    router:        { resource: "%kernel.root_dir%/config/routing.yml" }
-    validation:    { enabled: true, annotations: true }
-    templating:    { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
+    secret:          %secret%
+    charset:         UTF-8
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
     session:
         default_locale: %locale%
         lifetime:       3600

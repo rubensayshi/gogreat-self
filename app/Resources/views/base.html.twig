@@ -14,14 +14,14 @@
 		
     </head>
     <body>
-    	<div class="container">
-    		<div class="header">
-    			<div class="title font"><h1>WEBSITE</h1></div>
+    	<div class="site_container">
+    		<div class="site_header">
+    			<div class="site_title"><h1>WEBSITE</h1></div>
     			<div class="menu">{{ menu('main') }}</div>
     		</div>
-    		<div class="content">
-    			<div class="content-inner">{% block _content %}{% endblock %}</div>
-    			<div class="content-sidebar">{% render "CMSBaseBundle:Sidebar:index" %}</div>
+    		<div class="site_content">
+    			<div class="site_content-inner">{% block _content %}{% endblock %}</div>
+    			<div class="site_content-sidebar">{% render "CMSBaseBundle:Sidebar:index" %}</div>
     			<div class="clearfix"></div>
     		</div>
     	</div>        
