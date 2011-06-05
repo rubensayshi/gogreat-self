@@ -83,6 +83,7 @@ h3								{ font-size: 150% }
 
 .editables_container					{ position: relative }
 .editables_container .editables_admin	{ position: absolute; top: 5px; right: 5px; }
+.editables_container .editables_admin a	{ text-decoration: none; }
 
 /*
  * block styling
