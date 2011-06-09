@@ -1,9 +1,12 @@
-<i>look at my sidebar!</i> <br />
-{% if user %}
-Hello {{ user.username }}!<br />
-<div class="menu">
-	{{ menu('loggedin') }}
-</div>
-{% else %}
-Maybe you should <a href="{{ path('_security_login') }}">login</a>?
+<div class="block">
+	<h3 class="header">look at my sidebar!</h3>
+	<div class="content">
+		{% if user %}
+		Hello {{ user.username }}!<br />
+		<div class="menu">
+			{{ menu('loggedin') }}
+		</div>
+		{% else %}
+		Maybe you should <a href="{{ path('_security_login') }}">login</a>?
+	</div>
 {% endif %}

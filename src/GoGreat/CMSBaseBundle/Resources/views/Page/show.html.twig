@@ -1,7 +1,7 @@
 {% extends 'CMSBaseBundle::layout.html.twig' %}
 
 {% block _content %}	
-	<div class="editables_container">
+	<div class="editables_container block two-col">
 		{% if admin %}
 			<div class="editables_admin">
 				<a href="#edit" 	
@@ -18,8 +18,10 @@
 				</a>
 			</div>
 		{% endif %}
-		<h3 class="editables" data-field="title">{% block _title %} {{ page.title | raw }} {% endblock %}</h3>
+		<h2 class="header editables" data-field="title">{% block _title %} {{ page.title | raw }} {% endblock %}</h2>
 		
-		<div class="editables" data-field="content" style="min-height: 300px;">{{ page.content | raw }}</div>
+		<div class="editables content" data-field="content" style="min-height: 300px;">
+			{{ page.content | raw }}
+		</div>
 	</div>
 {% endblock %}

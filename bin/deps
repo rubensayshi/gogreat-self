@@ -15,5 +15,5 @@
 /                       gogreat                http://github.com/rubensayshi/symfony-wrapper.git
 /bundles/Knplabs/Bundle MenuBundle             http://github.com/knplabs/MenuBundle.git
 /bundles/Symfony/Bundle DoctrineFixturesBundle http://github.com/symfony/DoctrineFixturesBundle.git
-/bundles/Symfony/Bundle doctrine-fixtures      http://github.com/doctrine/data-fixtures.git
+/                       doctrine-fixtures      http://github.com/doctrine/data-fixtures.git
 /bundles/GoGreat        AlohaBundle            http://github.com/rubensayshi/AlohaBundle.git
