@@ -1,0 +1,19 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% block _title %}
+	News
+{% endblock %}
+
+{% block _content %}	
+	{% for newsArticle in newsArticles %}
+		<div class="editables_container block {{ cycle(['right', 'left'], loop.index) }}">
+			<a href="{{ path('show_news',  { 'slug': newsArticle.slug }) }}" 	>
+				<h2 class="header">{{ newsArticle.title }}</h2>
+			</a>
+			
+			<div class="content" style="height: 70px;">
+				{{ newsArticle.content | striptags | truncate(150) }}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

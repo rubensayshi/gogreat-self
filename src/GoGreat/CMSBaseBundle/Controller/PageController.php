@@ -2,7 +2,6 @@
 
 namespace GoGreat\CMSBaseBundle\Controller;
 
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception;
 use GoGreat\BaseBundle\Controller\BaseController;
@@ -53,6 +52,8 @@ class PageController extends BaseController
         $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\Page')	
     						->persist($page);
+    						
+    	$this->getEntityManager()->flush();
     	
     	return new Response(json_encode(array(
     		'result' 		=> true, 
@@ -79,6 +80,7 @@ class PageController extends BaseController
        $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\Page')	
     						->remove($page);
+        $this->getEntityManager()->flush();
     						
     	return new Response(json_encode(array(
     		'result' 		=> true, 

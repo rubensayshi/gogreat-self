@@ -16,6 +16,13 @@ class LoadCMSBaseMenuItemData extends ContainerAware implements FixtureInterface
 			'identifier'	=> 'homepage',
 			'routing'		=> 'homepage',
 			'arguments'		=> array(),
+			'weight'		=> -4,
+		),
+		array(
+			'title'			=> 'News',
+			'identifier'	=> 'news',
+			'routing'		=> 'news',
+			'arguments'		=> array(),
 			'weight'		=> -3,
 		),
 		array(

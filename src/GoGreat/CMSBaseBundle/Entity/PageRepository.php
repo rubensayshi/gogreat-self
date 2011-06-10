@@ -20,9 +20,7 @@ class PageRepository extends EntityRepository
 	public function persist(Page $page)
 	{		
 		$em = $this->getEntityManager();
-		
 		$em->persist($page);
-		$em->flush();
 	}
 	
 	/**
@@ -41,6 +39,5 @@ class PageRepository extends EntityRepository
 			$em->remove($menu_item);
 		
 		$em->remove($page);
-		$em->flush();
 	}
 }

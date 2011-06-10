@@ -44,6 +44,5 @@ class MenuItemRepository extends EntityRepository
 		$item->setIdentifier($identifier);
 		
 		$em->persist($item);
-		$em->flush();
 	}
 }

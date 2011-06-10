@@ -19,10 +19,9 @@
     			<div class="site_title"><h1>WEBSITE</h1></div>
     			<div class="menu">{{ menu('main') }}</div>
     		</div>
-    		<div class="site_content">
+    		<div class="site_content clearfix">
     			<div class="site_content-inner">{% block _content %}{% endblock %}</div>
     			<div class="site_content-sidebar">{% render "CMSBaseBundle:Sidebar:index" %}</div>
-    			<div class="clearfix"></div>
     		</div>
     	</div>        
     </body>

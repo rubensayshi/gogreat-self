@@ -17,8 +17,8 @@ class LoadCMSBasePageData extends ContainerAware implements FixtureInterface
 		for($p = 0; $p < 10; $p++)
 		{
 			$page = new Entity\Page();
-			$page->setTitle("lôrém tl #{$p}");
-			$page->setContent("lorem tl ipsum #{$p}");
+			$page->setTitle("lôrém page #{$p}");
+			$page->setContent("lorem page ipsum #{$p}");
 
 			$manager->persist($page);	
 			

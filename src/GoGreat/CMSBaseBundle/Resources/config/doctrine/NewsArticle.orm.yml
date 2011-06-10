@@ -1,0 +1,27 @@
+GoGreat\CMSBaseBundle\Entity\NewsArticle:
+  type: entity
+  table: newsarticle
+  repositoryClass: GoGreat\CMSBaseBundle\Entity\NewsArticleRepository
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    title:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    slug:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    content:
+      type: text
+      fixed: false
+      nullable: true   
+  lifecycleCallbacks: {  }

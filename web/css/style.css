@@ -82,7 +82,6 @@ h3								{ font-size: 150% }
 .site_content-sidebar			{ width: 295px; float: left; min-height: 500px; padding: 10px 10px 10px 0px; }
 .site_content-sidebar .menu ul  { list-style: dotted; margin: 10px 0px 0px 0px; }
 .site_content-sidebar .menu ul li{ margin: 0px 0px 0px 15px; }
-.clearfix						{ clear: both; height: 0px; }
 
 .editables_container					{ position: relative }
 .editables_container .editables_admin	{ position: absolute; top: 5px; right: 5px; }

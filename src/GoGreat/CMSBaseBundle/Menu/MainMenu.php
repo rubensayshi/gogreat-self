@@ -21,8 +21,9 @@ class MainMenu extends Menu
 
 		$menuItems = $em	->getRepository('GoGreat\CMSBaseBundle\Entity\MenuItem')
 							->findAll();
-							
-		foreach($menuItems as $item)
-			$this->addChild($item->getTitle(), $router->generate($item->getRouting(), $item->getArguments()));
+	
+		foreach($menuItems as $item) {
+			$child = $this->addChild($item->getTitle(), $router->generate($item->getRouting(), $item->getArguments()));
+		}
 	}
 }

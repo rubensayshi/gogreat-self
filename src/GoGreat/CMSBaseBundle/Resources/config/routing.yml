@@ -3,11 +3,11 @@ homepage:
     defaults: { _controller: CMSBaseBundle:Frontpage:index }
 
 hello:
-    pattern:  /haithar
+    pattern:  haithar
     defaults: { _controller: CMSBaseBundle:Frontpage:hello }
 
 page:
-    pattern:  /page/{slug}.{_format}
+    pattern:  page/{slug}.{_format}
     defaults: { _controller: CMSBaseBundle:Page:show, _format: html }
     
 save_page:
@@ -17,3 +17,19 @@ save_page:
 delete_page:
     pattern:  admin/page/{slug}/delete.{_format}
     defaults: { _controller: CMSBaseBundle:Page:delete, _format: json }
+    
+news:
+    pattern:  news.{_format}
+    defaults: { _controller: CMSBaseBundle:News:index, _format: html }
+    
+show_news:
+    pattern:  news/article/{slug}.{_format}
+    defaults: { _controller: CMSBaseBundle:News:show, _format: html }
+    
+save_news:
+    pattern:  admin/news/{slug}/save.{_format}
+    defaults: { _controller: CMSBaseBundle:News:save, _format: json }
+    
+delete_news:
+    pattern:  admin/news/{slug}/delete.{_format}
+    defaults: { _controller: CMSBaseBundle:News:delete, _format: json }
