@@ -1,4 +1,3 @@
-
 imports:
     - { resource: parameters.php }
     - { resource: security.yml }
@@ -24,6 +23,7 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    extensions:       [twig.extension.text] 
 
 # Assetic Configuration
 assetic:
@@ -39,27 +39,17 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        default_connection: master
-        connections:
-            master:
-               driver:   %database.master.driver%
-               host:     %database.master.host%
-               port:     %database.master.port%
-               dbname:   %database.master.name%
-               user:     %database.master.user%
-               password: %database.master.pass%
+        driver:   %database.master.driver%
+        host:     %database.master.host%
+        port:     %database.master.port%
+        dbname:   %database.master.name%
+        user:     %database.master.user%
+        password: %database.master.pass%
+        charset: UTF8
+
     orm:
-        auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
-#        default_entity_manager: default
-#        mappings:
-#            CMSBaseBundle: 
-#                type: yml
-#                dir: Resources/config/doctrine
-#            UserBundle: 
-#                type: yml
-#                dir: Resources/config/doctrine
 
 # Swiftmailer Configuration
 swiftmailer:
