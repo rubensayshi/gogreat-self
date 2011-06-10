@@ -54,9 +54,12 @@ html[xmlns] .clearfix {
 /*
  * basic website layout styling
  */
-body 							{ font-family: verdana, helvetica, arial, sans-serif; font-size: 12px; margin: 5px; background-color: #F9F7ED; color: #36393D; }
+body 							{ font-family: verdana, helvetica, arial, sans-serif; font-size: 12px; margin: 5px; background-color: #F9F7ED; color: #36393D; padding: 5px !important; }
 @font-face 						{ font-family: 'MEgalopolisExtra'; src: url('../fonts/MEgalopolisExtra.otf'); }  
-@font-face 						{ font-family: 'MEgalopolisExtra'; src: url('../fonts/MEgalopolisExtra.otf'); font-weight: bold; }  
+@font-face 						{ font-family: 'MEgalopolisExtra'; src: url('../fonts/MEgalopolisExtra.otf'); font-weight: bold; }
+ul 								{ list-style: none; }
+ul li 							{ position: relative; min-height: 20px; line-height: 20px; }
+ul li .admin 					{ position: absolute; top: 2px; right: 2px; }
 a, a:visited					{ color: #36393D; font-decoration: underline; }
 a:hover							{ color: #3F4C6B; font-decoration: underline; }
 li.current_ancestor > a,
@@ -107,3 +110,4 @@ form .row input, textarea		{ -moz-border-radius: 5px; -webkit-border-radius: 5px
 								  width: 650px; padding: 4px; }
 form .row textarea				{ min-height: 200px; }
 form .row .button				{ cursor: pointer; color: #36393D; background-color: gray; width: auto; padding: 4px 10px; font-family: 'MEgalopolisExtra'; font-size: 16px; }
+

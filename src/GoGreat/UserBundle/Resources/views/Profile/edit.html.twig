@@ -1,19 +1,35 @@
 {% extends 'CMSBaseBundle::layout.html.twig' %}
 
-{% block _content %}
-	<h3>{% block _title %}Control Panel :: Edit Profile{% endblock %}</h3>
-	
-	Edit your profile `{{ user.username }}`.
-	<form action="#" method="post" {{ form_enctype(form) }}>
+{% form_theme form _self %}
+
+{% block field_row %}
+	<div class="row">
+		{{ form_label(form) }}
 		{{ form_errors(form) }}
-				
-   		{{ form_row(form.username) }}
-    	{{ form_row(form.password) }}
-    	{{ form_row(form.email) }}
-    	{{ form_row(form.addresses) }}
+		{{ form_widget(form) }}
+	</div>
+{% endblock field_row %}
+
+{% block _content %}
+	<div class="block two-col">
+		<h3 class="header">{% block _title %}Control Panel :: Edit Profile{% endblock %}</h3>
 		
-		{{ form_rest(form) }}
-			
-	    <input type="submit" />
-	</form>
+		<div class="content">
+			Edit your profile `{{ user.username }}`.
+			<form action="#" method="post" {{ form_enctype(form) }}>
+				{{ form_errors(form) }}
+						
+		   		{{ form_row(form.username) }}
+				{{ form_row(form.password) }}
+				{{ form_row(form.email) }}
+				{{ form_row(form.addresses) }}
+				
+				{{ form_rest(form) }}
+					
+				<div class="row submit">
+					<input type="submit" class="button" value="save" />
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock %}
