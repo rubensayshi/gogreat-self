@@ -20,7 +20,16 @@
     			<div class="menu">{{ menu('main') }}</div>
     		</div>
     		<div class="site_content clearfix">
-    			<div class="site_content-inner">{% block _content %}{% endblock %}</div>
+    			<div class="site_content-inner">
+    				<div class="submenu clearfix">
+    					<ul>
+    						<li><a>we</a></li>
+    						<li><a>put</a></li>
+    						<li><a>submenu</a></li>
+    						<li><a>here?</a></li>
+    					</ul>
+    				</div>
+    			{% block _content %}{% endblock %}</div>
     			<div class="site_content-sidebar">{% render "CMSBaseBundle:Sidebar:index" %}</div>
     		</div>
     	</div>        
