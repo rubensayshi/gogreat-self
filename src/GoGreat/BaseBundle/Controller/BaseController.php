@@ -7,6 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class BaseController extends Controller
 {	
 	/**
+	 * @return Request
+	 */
+	protected function getRequest() { return $this->get('request'); }
+	
+	/**
 	 * @return Doctrine\ORM\EntityManager
 	 */
 	protected function getEntityManager() { return $this->get('doctrine.orm.entity_manager'); }
