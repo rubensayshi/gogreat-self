@@ -22,19 +22,10 @@
 		
 		<div class="content" style="min-height: 300px;">
 			<div class="editables" style="float: left;" data-field="content">{{ newsArticle.content | raw }}</div>
-			<div class="right-float" style="float: right;">
-				<div id="file-uploader-news-image">		
-					<noscript>no javascript</noscript>         
-				</div>
-			    <script>     
-			    	$(window).load(function() {           
-			            var uploader = new qq.FileUploader({
-			                element:	document.getElementById('file-uploader-news-image'),
-			                action:		'{{ path('image_upload') }}',
-			                debug: 		true
-			            });           
-			        }); 
-	   			 </script>   
+			<div class="editable_images" data-field="image" style="float: right;">
+				{% if newsArticle.image %}
+					<img src="{{ newsArticle.image | apply_filter('news_thumb') }}" />
+				{% endif %}
 			</div>
 		</div>
 	</div>

@@ -4,13 +4,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block _title %}[_title]{% endblock %}</title>
 		<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('css/fileuploader.css') }}" rel="stylesheet" type="text/css" />
 		
 		{% block _javascript_head %}
 			<script type="text/javascript" src="{{ asset('js/vendor/jquery/jquery-1.5.2.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/vendor/jquery/sizzle.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/vendor/fileuploader/fileuploader.js') }}"></script>
 		
-			{% render "AlohaBundle:Script:init" %}
+			{% render "CMSBaseBundle:Script:editables" %}
 		{% endblock %}
 		
     </head>

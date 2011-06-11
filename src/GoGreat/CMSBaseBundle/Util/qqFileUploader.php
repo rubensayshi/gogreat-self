@@ -34,7 +34,7 @@ class qqUploadedFileXhr {
         if (isset($_SERVER["CONTENT_LENGTH"])){
             return (int)$_SERVER["CONTENT_LENGTH"];            
         } else {
-            throw new Exception('Getting content length is not supported.');
+            throw new \Exception('Getting content length is not supported.');
         }      
     }   
 }
@@ -144,7 +144,11 @@ class qqFileUploader {
         }
         
         if ($this->file->save($uploadDirectory . $filename . '.' . $ext)){
-            return array('success'=>true);
+            return array(
+            	'success'	=>		true, 
+            	'filename'	=>	 	$filename . '.' . $ext,
+            	'path'		=>		$uploadDirectory . $filename . '.' . $ext,
+            );
         } else {
             return array('error'=> 'Could not save uploaded file.' .
                 'The upload was cancelled, or server error encountered');

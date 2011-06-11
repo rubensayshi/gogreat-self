@@ -36,6 +36,10 @@ class NewsController extends BaseController
 		
     	if (!$newsArticle)
         	throw new Exception\NotFoundHttpException('The news article does not exist.');
+
+        if($image = $newsArticle->getImage()) {
+        	$newsArticle->setImage('uploads/' . $image);
+        }
         	
         return $this->render('CMSBaseBundle:News:show.html.twig', array(
         	'newsArticle'		=> $newsArticle,
@@ -63,6 +67,9 @@ class NewsController extends BaseController
         	
         if($content = $this->getRequest()->get('content'))
         	$newsArticle->setContent($content);
+        
+        if($image = $this->getRequest()->get('image'))
+        	$newsArticle->setImage($image);
         
         $this->getEntityManager()->persist($newsArticle);
         $this->getEntityManager()->flush();

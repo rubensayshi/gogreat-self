@@ -24,14 +24,16 @@ class ImageGalleryController extends BaseController
 
 	public function uploadAction()
 	{
-		error_log($this->uploadDir);
-		// list of valid extensions
-		$allowedExtensions = array('jpeg', 'png', 'gif');
-		// max file size in bytes
-		$sizeLimit = 8 * 1024 * 1024;
+		$allowedExtensions	= array('jpeg', 'png', 'gif');
+		$sizeLimit 			= (8 * 1024 * 1024);
+		$publicDir			= $this->uploadDir . '/';
 
-		$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
-		$result = $uploader->handleUpload($this->uploadDir . '/');
+		$uploader 			= new qqFileUploader($allowedExtensions, $sizeLimit);
+		$result 			= $uploader->handleUpload($this->uploadDir . '/');
+		
+		if($result['filename']) {
+			$result['public']	= '/uploads/' . $result['filename'];
+		}
 		
 		return new Response(json_encode($result));
 	}
