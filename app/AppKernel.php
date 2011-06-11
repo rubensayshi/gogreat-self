@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),            
       		new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+      		new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
       		
        		new GoGreat\AlohaBundle\AlohaBundle(),
        		

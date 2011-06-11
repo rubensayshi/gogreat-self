@@ -1,0 +1,8 @@
+services:
+   image_gallery_controller:
+      class:       "GoGreat\CMSBaseBundle\Controller\ImageGalleryController"      
+      shared:      true
+      arguments: 
+         upload_dir:      %cms_base.upload_dir%
+      calls:
+         - [ setContainer, ["@service_container"] ]

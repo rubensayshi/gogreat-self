@@ -23,5 +23,9 @@ GoGreat\CMSBaseBundle\Entity\NewsArticle:
     content:
       type: text
       fixed: false
+      nullable: true  
+    image:
+      type: text
+      fixed: false
       nullable: true   
   lifecycleCallbacks: {  }

@@ -33,3 +33,7 @@ save_news:
 delete_news:
     pattern:  admin/news/{slug}/delete.{_format}
     defaults: { _controller: CMSBaseBundle:News:delete, _format: json }
+
+image_upload:
+    pattern:  admin/image/upload.{_format}
+    defaults: { _controller: image_gallery_controller:uploadAction, _format: json }

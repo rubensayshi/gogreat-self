@@ -7,6 +7,8 @@ if($database = SymfonyCnf::getSection('database'))
 		if($key = preg_replace('/^symfony\.db/', 'database', $key))
 			$container->setParameter($key,		trim($val));
 			
+$container->setParameter('user_data_dir',	 	SymfonyCnf::get('symfony.dir.usrdata'));
+
 $container->setParameter('mailer_transport', 	'smtp');
 $container->setParameter('mailer_host', 		'localhost');
 $container->setParameter('mailer_user', 		'');

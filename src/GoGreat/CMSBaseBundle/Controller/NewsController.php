@@ -29,7 +29,7 @@ class NewsController extends BaseController
     }
 	
     public function showAction($slug)
-    {      	
+    {	
     	$newsArticle = $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')
 							->findOneBySlug($slug);

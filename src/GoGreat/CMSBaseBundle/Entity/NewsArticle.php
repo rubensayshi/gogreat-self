@@ -28,6 +28,10 @@ class NewsArticle
      */
     private $content;
 
+    /**
+     * @var text $image
+     */
+    private $image;
 
     /**
      * Get id
@@ -100,5 +104,25 @@ class NewsArticle
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set image
+     *
+     * @param text $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * Get image
+     *
+     * @return text $image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
