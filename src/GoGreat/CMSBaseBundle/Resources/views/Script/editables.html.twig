@@ -334,10 +334,17 @@ GENTICS.Aloha.settings = {
 
 		var handle_json_return = function (data)
 		{
-			if(data.errors && data.errors.length)
+			if(data.errors && data.errors.length) {
 				alert(data.errors);
-			if(data.redirect)
+			}
+			
+			if(data.flash) {
+				GG.flash(data.flash.type, data.flash.message);
+			}
+			
+			if(data.redirect) {
 				window.location.href = data.redirect;
+			}
 		};
 
 		var set_container_mode = function (_mode)

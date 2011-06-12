@@ -83,7 +83,10 @@ class NewsController extends BaseController
     	return new Response(json_encode(array(
     		'result' 		=> true, 
     		'redirect'		=> false,
-    		'errors' 		=> array(),
+    		'flash' 		=> array(
+    			'type'			=> 'success',
+    			'message'		=> 'Your changes have been saved.',
+    		),
     	)));
     }
     
