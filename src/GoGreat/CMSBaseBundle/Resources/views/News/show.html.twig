@@ -24,7 +24,7 @@
 			<div class="editables" style="float: left;" data-field="content">{{ newsArticle.content | raw }}</div>
 			<div class="editable_images" data-field="image" style="float: right;">
 				{% if newsArticle.image %}
-					<img src="{{ newsArticle.image | apply_filter('news_thumb') }}" />
+					<img src="{{ newsArticle.image | apply_filter('news_image_full') }}" />
 				{% endif %}
 			</div>
 		</div>

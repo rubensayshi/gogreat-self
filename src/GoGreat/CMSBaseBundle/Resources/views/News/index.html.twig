@@ -13,6 +13,9 @@
 			
 			<div class="content" style="height: 70px;">
 				{{ newsArticle.content | striptags | truncate(150) }}
+				{% if newsArticle.image %}
+					<img align="right" src="{{ newsArticle.image | apply_filter('news_image_thumb') }}" />
+				{% endif %}
 			</div>
 		</div>
 	{% endfor %}

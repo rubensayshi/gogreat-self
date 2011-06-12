@@ -112,8 +112,11 @@ h3								{ font-size: 150% }
 form .row						{ margin-top: 10px; }
 form .row.submit				{ margin-top: 50px; text-align: right; }
 form .row label					{ font-weight: bold; font-size: 14px; margin: 5px 0px 5px 3px; font-family: 'MEgalopolisExtra'; }
-form .row input, textarea		{ -moz-border-radius: 5px; -webkit-border-radius: 5px;border: 1px solid #36393D; background-color: #36393D; color: gray;
+form .row input, 
+form .row textarea,
+.button							{ -moz-border-radius: 5px; -webkit-border-radius: 5px;border: 1px solid #36393D; background-color: #36393D; color: gray;
 								  width: 650px; padding: 4px; }
 form .row textarea				{ min-height: 200px; }
-form .row .button				{ cursor: pointer; color: #36393D; background-color: gray; width: auto; padding: 4px 10px; font-family: 'MEgalopolisExtra'; font-size: 16px; }
+.button							{ display: inline-block; text-align: center; width: auto !important; padding: 4px 10px !important;
+								  cursor: pointer; color: #36393D !important; background-color: gray !important; font-family: 'MEgalopolisExtra'; font-size: 16px; }
 

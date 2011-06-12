@@ -22,6 +22,12 @@ class NewsController extends BaseController
     	if (!$newsArticles)
         	throw new Exception\NotFoundHttpException('No news articles found.');
         	
+        foreach($newsArticles as $newsArticle) {
+	        if($image = $newsArticle->getImage()) {
+	        	$newsArticle->setImage('uploads/' . $image);
+	        }
+        }
+        	
         return $this->render('CMSBaseBundle:News:index.html.twig', array(
         	'newsArticles'		=> $newsArticles,
         	'admin'				=> $this->isAdmin(),
@@ -62,15 +68,15 @@ class NewsController extends BaseController
         if ($this->getRequest()->getMethod() != 'POST') 
         	throw new Exception\NotFoundHttpException('Save action should be a POST request.');
 
-        if($title = $this->getRequest()->get('title'))
-        	$newsArticle->setTitle($title);
-        	
-        if($content = $this->getRequest()->get('content'))
-        	$newsArticle->setContent($content);
+        if($this->getRequest()->request->has('title'))
+        	$newsArticle->setTitle($this->getRequest()->request->get('title'));
         
-        if($image = $this->getRequest()->get('image'))
-        	$newsArticle->setImage($image);
+        if($this->getRequest()->request->has('content'))	
+     	   $newsArticle->setContent($this->getRequest()->request->get('content'));
         
+        if($this->getRequest()->request->has('image'))
+        	$newsArticle->setImage($this->getRequest()->request->get('image'));
+       
         $this->getEntityManager()->persist($newsArticle);
         $this->getEntityManager()->flush();
     	

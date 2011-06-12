@@ -65,9 +65,12 @@ knplabs_menu:
 # image presets
 avalanche_imagine:
     filters:
-        news_thumb:
+        news_image_thumb:
             type:    thumbnail
-            options: { size: [110, 110], mode: outbound }   
+            options: { size: [100, 75], mode: outbound }
+        news_image_full:
+            type:    thumbnail
+            options: { size: [200, 150], mode: outbound }   
 
 cms_base:
     upload_dir: %user_data_dir%
