@@ -81,10 +81,18 @@ h3								{ font-size: 150% }
 .site_title						{ padding: 10px 0px; height: 20px; text-align: center; }
 .site_content					{ min-height: 500px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #36393D; background-color: #CDEB8B; padding: 10px; }
 .site_content .submenu			{ width: 670px; margin: 0px 0px 10px 0px;
-								  -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #36393D; background-color: gray; }
+								  -moz-border-radius: 5px; border-radius: 5px; border: 1px solid #36393D; background-color: #6BBA70; }
 .site_content .submenu ul		{ list-style: none; padding: 0 10px; }
 .site_content .submenu ul li	{ float: left; padding-right: 10px; }
 .site_content .submenu ul li a	{ font-family: 'MEgalopolisExtra'; font-weight: normal; font-size: 14px; text-decoration: none; }
+.flash							{ width: 650px; margin: 0px 0px 10px 0px; padding: 10px;
+								  -moz-border-radius: 5px; border-radius: 5px; border: 1px solid #36393D; background-color: gray; }
+.flash div						{ background-repeat: no-repeat; background-position: 4px center; text-indent: 20px; background-color: #CDEB8B;
+								  -moz-border-radius: 5px; border-radius: 5px; border: 1px solid #36393D; padding: 4px; margin: 2px;
+								  min-height: 14px; line-height: 12px; }
+.flash .success					{ color: green; background-image: url('../images/icons/accept.png'); }
+.flash .error					{ color: red; background-image: url('../images/icons/exclamation.png'); }
+.flash .notice					{ color: orange; background-image: url('../images/icons/error.png'); }
 .site_content-inner				{ width: 672px; float: left; min-height: 500px; padding: 0px; }
 .site_content-sidebar			{ width: 295px; float: left; min-height: 500px; padding: 0px; margin: 0 0 0 10px; }
 .site_content-sidebar .menu ul  { list-style: dotted; margin: 10px 0px 0px 0px; }

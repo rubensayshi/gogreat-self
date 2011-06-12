@@ -10,6 +10,7 @@
 			<script type="text/javascript" src="{{ asset('js/vendor/jquery/jquery-1.5.2.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/vendor/jquery/sizzle.js') }}"></script>
 			<script type="text/javascript" src="{{ asset('js/vendor/fileuploader/fileuploader.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/GG.flash.js') }}"></script>
 		
 			{% render "CMSBaseBundle:Script:editables" %}
 		{% endblock %}
@@ -30,6 +31,17 @@
     						<li><a>submenu</a></li>
     						<li><a>here?</a></li>
     					</ul>
+    				</div>
+    				<div class="flash clearfix" id="flash" style="display: none; {% if app.session.getFlashes() %}display: block;{% endif %}">
+    					{% if app.session.hasFlash('success') %}
+						    <div class="success">{{ app.session.flash('success') }}</div>
+						{% endif %}
+    					{% if app.session.hasFlash('error') %}
+						    <div class="error">{{ app.session.flash('error') }}</div>
+						{% endif %}
+    					{% if app.session.hasFlash('notice') %}
+						    <div class="notice">{{ app.session.flash('notice') }}</div>
+						{% endif %}
     				</div>
     			{% block _content %}{% endblock %}</div>
     			<div class="site_content-sidebar">{% render "CMSBaseBundle:Sidebar:index" %}</div>
