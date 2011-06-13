@@ -2,6 +2,10 @@
 
 namespace GoGreat\CMSBaseBundle\Controller;
 
+use GoGreat\CMSBaseBundle\Entity\NewsArticle;
+
+use GoGreat\CMSBaseBundle\Form\NewsArticleType;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception;
 use GoGreat\BaseBundle\Controller\BaseController;
@@ -52,49 +56,39 @@ class NewsController extends BaseController
         	'admin'				=> $this->isAdmin(),
         ));
     }
-
-    public function saveAction($slug)
+    
+    public function editAction($slug)
     {
-    	if (!$this->isAdmin())
-        	throw new Exception\NotFoundHttpException('You do not have enough rights.');
-    	    	
-    	$newsArticle = $this->getEntityManager()
+    	$form 		= $this->get('form.factory')->create(new NewsArticleType());
+		$request 	= $this->get('request');
+		
+		$newsArticle = ($slug) ? $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')
-							->findOneBySlug($slug);
-							
-    	if (!$newsArticle)
-        	throw new Exception\NotFoundHttpException('The news article does not exist.');
-        	
-        if ($this->getRequest()->getMethod() != 'POST') 
-        	throw new Exception\NotFoundHttpException('Save action should be a POST request.');
+    						->findOneBySlug($slug) : false;
+    				
+    	if(!$newsArticle)
+			$newsArticle = new NewsArticle();
+			
+		$form->setData($newsArticle);
+		
+		if ($request->getMethod() == 'POST') {
+			$form->bindRequest($request);
 
-        if($this->getRequest()->request->has('title'))
-        	$newsArticle->setTitle($this->getRequest()->request->get('title'));
-        
-        if($this->getRequest()->request->has('content'))	
-     	   $newsArticle->setContent($this->getRequest()->request->get('content'));
-        
-        if($this->getRequest()->request->has('image'))
-        	$newsArticle->setImage($this->getRequest()->request->get('image'));
-        	
-        if($this->getRequest()->request->has('published_date')) {
-        	$raw	= $this->getRequest()->request->get('published_date');
-        	$date	= strtotime($raw);
-        	
-        	$newsArticle->setPublishedDate(new \DateTime(date('d-m-Y', $date)));
-        }
-        	
-        $this->getEntityManager()->persist($newsArticle);
-        $this->getEntityManager()->flush();
-    	
-    	return new Response(json_encode(array(
-    		'result' 		=> true, 
-    		'redirect'		=> false,
-    		'flash' 		=> array(
-    			'type'			=> 'success',
-    			'message'		=> 'Your changes have been saved.',
-    		),
-    	)));
+			if ($form->isValid()) {
+				$this->getEntityManager()
+					 ->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')
+					 ->persist($newsArticle);
+					 
+				$this->getEntityManager()
+					 ->flush();
+				
+				return $this->redirect($this->generateUrl('news'));
+			}
+		}
+		
+        return $this->render('CMSBaseBundle:News:edit.html.twig', array(
+				'form'			=> $form->createView(),
+		));
     }
     
     public function deleteAction($slug)
@@ -108,19 +102,14 @@ class NewsController extends BaseController
 							
     	if (!$newsArticle)
         	throw new Exception\NotFoundHttpException('The news article does not exist.');
-        	
-        if ($this->getRequest()->getMethod() != 'POST') 
-        	throw new Exception\NotFoundHttpException('Delete action should be a POST request.');
 
        $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')	
     						->remove($newsArticle);
         $this->getEntityManager()->flush();
-    						
-    	return new Response(json_encode(array(
-    		'result' 		=> true, 
-    		'redirect'		=> $this->generateUrl('news', array(), true),
-    		'errors' 		=> array(),
-    	)));
+
+        $this->get('session')->setFlash('Deleted news article');
+        
+		return $this->redirect($this->generateUrl('news'));
     }
 }

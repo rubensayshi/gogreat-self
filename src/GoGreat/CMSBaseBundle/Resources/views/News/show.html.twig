@@ -4,13 +4,9 @@
 	<div class="editables_container block two-col">
 		{% if admin %}
 			<div class="editables_admin">
-				<a href="#edit" 	
+				<a href="{{ path('edit_news',  { 'slug': newsArticle.slug }) }}" 	
 					class="editables_button editables_edit"> 	
 						<img src="{{ asset('images/icons/page_edit.png') }}" /> 		
-				</a>
-				<a href="{{ path('save_news',  { 'slug': newsArticle.slug }) }}" 	
-					class="editables_button editables_save"> 	
-						<img src="{{ asset('images/icons/page_save.png') }}" /> 		
 				</a>
 				<a href="{{ path('delete_news',  { 'slug': newsArticle.slug }) }}" 	
 					class="editables_button editables_delete"> 	
@@ -18,12 +14,12 @@
 				</a>
 			</div>
 		{% endif %}
-		<h2 class="header editables" data-field="title">{% block _title %} {{ newsArticle.title | raw }} {% endblock %}</h2>
+		<h2 class="header">{% block _title %} {{ newsArticle.title | raw }} {% endblock %}</h2>
 		
 		<div class="content" style="min-height: 300px;">
-			<div class="editables" data-field="published_date">{{ newsArticle.getPublishedDate | date('l d-m-Y') }}</div>
-			<div class="editables" style="float: left;" data-field="content">{{ newsArticle.content | raw }}</div>
-			<div class="editable_images" data-field="image" style="float: right;">
+			<div>{{ newsArticle.getPublishedDate | date('l d-m-Y') }}</div>
+			<div style="float: left;">{{ newsArticle.content | raw }}</div>
+			<div style="float: right;">
 				{% if newsArticle.image %}
 					<img src="{{ newsArticle.image | apply_filter('news_image_full') }}" />
 				{% endif %}

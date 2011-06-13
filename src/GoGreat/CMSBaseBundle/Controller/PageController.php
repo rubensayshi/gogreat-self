@@ -2,6 +2,9 @@
 
 namespace GoGreat\CMSBaseBundle\Controller;
 
+use GoGreat\CMSBaseBundle\Form\PageType;
+
+use GoGreat\CMSBaseBundle\Entity\Page;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception;
 use GoGreat\BaseBundle\Controller\BaseController;
@@ -27,39 +30,41 @@ class PageController extends BaseController
         	'admin'				=> $this->isAdmin(),
         ));
     }
-
-    public function saveAction($slug)
+    
+    public function editAction($slug)
     {
-    	if (!$this->isAdmin())
-        	throw new Exception\NotFoundHttpException('You do not have enough rights.');
-    	    	
-    	$page = $this->getEntityManager()
+    	$form 		= $this->get('form.factory')->create(new PageType());
+		$request 	= $this->get('request');
+		
+		$page = ($slug) ? $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\Page')
-							->findOneBySlug($slug);
-							
-    	if (!$page)
-        	throw new Exception\NotFoundHttpException('The page does not exist.');
-        	
-        if ($this->getRequest()->getMethod() != 'POST') 
-        	throw new Exception\NotFoundHttpException('Save action should be a POST request.');
+    						->findOneBySlug($slug) : false;
+    				
+    	if(!$page)
+			$page = new Page();
+			
+		$form->setData($page);
+		
+		if ($request->getMethod() == 'POST') {
+			$form->bindRequest($request);
 
-        if($title = $this->getRequest()->get('title'))
-        	$page->setTitle($title);
-        	
-        if($content = $this->getRequest()->get('content'))
-        	$page->setContent($content);
-        
-        $this->getEntityManager()
-    						->getRepository('GoGreat\CMSBaseBundle\Entity\Page')	
-    						->persist($page);
-    						
-    	$this->getEntityManager()->flush();
-    	
-    	return new Response(json_encode(array(
-    		'result' 		=> true, 
-    		'redirect'		=> false,
-    		'errors' 		=> array(),
-    	)));
+			if ($form->isValid()) {
+				$this->getEntityManager()
+					 ->getRepository('GoGreat\CMSBaseBundle\Entity\Page')
+					 ->persist($page);
+					 
+				$this->getEntityManager()
+					 ->flush();
+				
+				return $this->redirect($this->generateUrl('page', array(
+					'slug'		=> $page->getSlug()
+				)));
+			}
+		}
+		
+        return $this->render('CMSBaseBundle:News:edit.html.twig', array(
+				'form'			=> $form->createView(),
+		));
     }
     
     public function deleteAction($slug)
@@ -81,11 +86,9 @@ class PageController extends BaseController
     						->getRepository('GoGreat\CMSBaseBundle\Entity\Page')	
     						->remove($page);
         $this->getEntityManager()->flush();
-    						
-    	return new Response(json_encode(array(
-    		'result' 		=> true, 
-    		'redirect'		=> $this->generateUrl('homepage', array(), true),
-    		'errors' 		=> array(),
-    	)));
+    				
+        $this->get('session')->flash('Deleted news article');
+        
+		return $this->redirect($this->generateUrl('homepage'));
     }
 }

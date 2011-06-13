@@ -4,13 +4,9 @@
 	<div class="editables_container block two-col">
 		{% if admin %}
 			<div class="editables_admin">
-				<a href="#edit" 	
+				<a href="{{ path('edit_page',  { 'slug': page.slug }) }}" 	
 					class="editables_button editables_edit"> 	
 						<img src="{{ asset('images/icons/page_edit.png') }}" /> 		
-				</a>
-				<a href="{{ path('save_page',  { 'slug': page.slug }) }}" 	
-					class="editables_button editables_save"> 	
-						<img src="{{ asset('images/icons/page_save.png') }}" /> 		
 				</a>
 				<a href="{{ path('delete_page',  { 'slug': page.slug }) }}" 	
 					class="editables_button editables_delete"> 	
@@ -18,9 +14,9 @@
 				</a>
 			</div>
 		{% endif %}
-		<h2 class="header editables" data-field="title">{% block _title %} {{ page.title | raw }} {% endblock %}</h2>
+		<h2 class="header">{% block _title %} {{ page.title | raw }} {% endblock %}</h2>
 		
-		<div class="editables content" data-field="content" style="min-height: 300px;">
+		<div class="content" style="min-height: 300px;">
 			{{ page.content | raw }}
 		</div>
 	</div>

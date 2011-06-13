@@ -16,7 +16,6 @@ gogreat                /                       http://github.com/rubensayshi/sym
 MenuBundle             /bundles/Knplabs/Bundle http://github.com/knplabs/MenuBundle.git
 DoctrineFixturesBundle /bundles/Symfony/Bundle http://github.com/symfony/DoctrineFixturesBundle.git
 doctrine-fixtures      /                       http://github.com/doctrine/data-fixtures.git
-AlohaBundle            /bundles/GoGreat        http://github.com/rubensayshi/AlohaBundle.git
 
 imagine                /                         git://github.com/avalanche123/Imagine.git
 ImagineBundle          /bundles/Avalanche/Bundle git://github.com/avalanche123/AvalancheImagineBundle.git
