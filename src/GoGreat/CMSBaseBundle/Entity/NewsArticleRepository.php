@@ -19,6 +19,10 @@ class NewsArticleRepository extends EntityRepository
 	 */
 	public function persist(NewsArticle $news)
 	{		
+		if(!$news->getPublishedDate()) {
+			$news->setPublishedDate(new \DateTime());
+		}
+		
 		$em = $this->getEntityManager();
 		$em->persist($news);
 	}

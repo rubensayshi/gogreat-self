@@ -19,7 +19,7 @@ class LoadCMSBaseNewsData extends ContainerAware implements FixtureInterface
 			$news->setTitle("lôrém news #{$p}");
 			$news->setContent("lorem news ipsum #{$p}");
 
-			$manager->persist($news);					
+			$manager->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')->persist($news);				
 		}
 
 		$manager->flush();

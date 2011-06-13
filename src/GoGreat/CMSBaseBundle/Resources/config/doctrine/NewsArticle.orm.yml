@@ -15,6 +15,9 @@ GoGreat\CMSBaseBundle\Entity\NewsArticle:
       length: 45
       fixed: false
       nullable: true
+    published_date:
+      type: date
+      nullable: false
     slug:
       type: string
       length: 45

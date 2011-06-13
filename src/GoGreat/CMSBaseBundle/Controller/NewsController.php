@@ -76,7 +76,14 @@ class NewsController extends BaseController
         
         if($this->getRequest()->request->has('image'))
         	$newsArticle->setImage($this->getRequest()->request->get('image'));
-       
+        	
+        if($this->getRequest()->request->has('published_date')) {
+        	$raw	= $this->getRequest()->request->get('published_date');
+        	$date	= strtotime($raw);
+        	
+        	$newsArticle->setPublishedDate(new \DateTime(date('d-m-Y', $date)));
+        }
+        	
         $this->getEntityManager()->persist($newsArticle);
         $this->getEntityManager()->flush();
     	

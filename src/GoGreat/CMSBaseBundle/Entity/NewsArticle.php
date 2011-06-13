@@ -32,6 +32,11 @@ class NewsArticle
      * @var text $image
      */
     private $image;
+    
+    /**
+     * @var date $published_date
+     */
+    private $published_date;
 
     /**
      * Get id
@@ -124,5 +129,25 @@ class NewsArticle
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set published_date
+     *
+     * @param date $publishedDate
+     */
+    public function setPublishedDate($publishedDate)
+    {
+        $this->published_date = $publishedDate;
+    }
+
+    /**
+     * Get published_date
+     *
+     * @return date $publishedDate
+     */
+    public function getPublishedDate()
+    {
+        return $this->published_date;
     }
 }

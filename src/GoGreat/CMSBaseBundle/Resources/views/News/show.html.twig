@@ -21,6 +21,7 @@
 		<h2 class="header editables" data-field="title">{% block _title %} {{ newsArticle.title | raw }} {% endblock %}</h2>
 		
 		<div class="content" style="min-height: 300px;">
+			<div class="editables" data-field="published_date">{{ newsArticle.getPublishedDate | date('l d-m-Y') }}</div>
 			<div class="editables" style="float: left;" data-field="content">{{ newsArticle.content | raw }}</div>
 			<div class="editable_images" data-field="image" style="float: right;">
 				{% if newsArticle.image %}
