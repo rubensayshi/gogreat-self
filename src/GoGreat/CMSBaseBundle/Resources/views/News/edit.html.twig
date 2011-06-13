@@ -1,0 +1,28 @@
+{% extends 'CMSBaseBundle::layout.html.twig' %}
+
+{% form_theme form _self %}
+
+{% block field_row %}
+	<div class="row">
+		{{ form_label(form) }}
+		{{ form_errors(form) }}
+		{{ form_widget(form) }}
+	</div>
+{% endblock field_row %}
+
+{% block _content %}
+	<div class="block two-col">
+		<h3 class="header">{% block _title %}Edit news article{% endblock %}</h3>
+		
+		<div class="content">		
+			<form action="#" method="post" {{ form_enctype(form) }}>
+				{{ form_errors(form) }}
+				{{ form_rest(form) }}
+					
+		   		<br />
+		   		<br />
+			    <input type="submit" />
+			</form>
+	    </div>
+    </div>
+{% endblock %}
