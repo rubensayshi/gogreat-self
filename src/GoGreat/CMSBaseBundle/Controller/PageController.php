@@ -62,7 +62,7 @@ class PageController extends BaseController
 			}
 		}
 		
-        return $this->render('CMSBaseBundle:News:edit.html.twig', array(
+        return $this->render('CMSBaseBundle:Page:edit.html.twig', array(
 				'form'			=> $form->createView(),
 		));
     }
@@ -87,7 +87,7 @@ class PageController extends BaseController
     						->remove($page);
         $this->getEntityManager()->flush();
     				
-        $this->get('session')->flash('Deleted news article');
+        $this->get('session')->setFlash('success', 'Deleted page');
         
 		return $this->redirect($this->generateUrl('homepage'));
     }

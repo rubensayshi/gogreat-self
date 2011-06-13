@@ -12,6 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class NewsArticleRepository extends EntityRepository
 {
+	public function findAllNews() 
+	{
+		$query = $this->createQueryBuilder('n')
+					  ->orderBy('n.published_date', 'DESC')
+					  ->getQuery();
+		
+		return $query->execute();
+	}
+	
 	/**
 	 * persist an instance of NewsArticle with the entity_manager
 	 * 

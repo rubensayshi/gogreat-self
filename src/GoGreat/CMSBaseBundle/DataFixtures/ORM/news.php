@@ -18,6 +18,10 @@ class LoadCMSBaseNewsData extends ContainerAware implements FixtureInterface
 			$news = new Entity\NewsArticle();
 			$news->setTitle("lôrém news #{$p}");
 			$news->setContent("lorem news ipsum #{$p}");
+			$inThePast	= rand(0, 100);
+			$date		= strtotime("-{$inThePast}days");
+			
+			$news->setPublishedDate(new \DateTime(date('Y-m-d', $date)));
 
 			$manager->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')->persist($news);				
 		}

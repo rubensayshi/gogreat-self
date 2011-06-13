@@ -98,10 +98,6 @@ h3								{ font-size: 150% }
 .site_content-sidebar .menu ul  { list-style: dotted; margin: 10px 0px 0px 0px; }
 .site_content-sidebar .menu ul li{ margin: 0px 0px 0px 15px; }
 
-.editables_container					{ position: relative }
-.editables_container .editables_admin	{ position: absolute; top: 5px; right: 5px; }
-.editables_container .editables_admin a	{ text-decoration: none; }
-
 /*
  * block styling
  */
@@ -112,7 +108,11 @@ h3								{ font-size: 150% }
 .site_content-sidebar .block	{ width: 295px; clear: both; }
 .block.two-col 					{ width: 670px; clear: both; }
 .block .header 					{ padding: 5px; background-color: #6BBA70; border-bottom: 1px solid #36393D; font-family: 'MEgalopolisExtra'; font-size: 14px; height: 16px; }
+.block .header a				{ text-decoration: none; }
+.block .header .subheader		{ font-size: 9px; float: right; }
 .block .content 				{ padding: 5px; }
+.block .admin					{ float: right; margin-left: 5px; }
+.block .admin a					{ text-decoration: none; }
 
 /*
  * form styling
@@ -122,9 +122,11 @@ form .row.submit				{ margin-top: 50px; text-align: right; }
 form .row label					{ font-weight: bold; font-size: 14px; margin: 5px 0px 5px 3px; font-family: 'MEgalopolisExtra'; }
 form .row input, 
 form .row textarea,
+form .row select,
 .button							{ -moz-border-radius: 5px; -webkit-border-radius: 5px;border: 1px solid #36393D; background-color: #36393D; color: gray;
 								  width: 650px; padding: 4px; }
 form .row textarea				{ min-height: 200px; }
+form .row select				{ width: auto; margin: 0px 5px; }
 .button							{ display: inline-block; text-align: center; width: auto !important; padding: 4px 10px !important;
 								  cursor: pointer; color: #36393D !important; background-color: gray !important; font-family: 'MEgalopolisExtra'; font-size: 16px; }
 

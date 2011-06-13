@@ -6,9 +6,24 @@
 
 {% block _content %}	
 	{% for newsArticle in newsArticles %}
-		<div class="editables_container block {{ cycle(['right', 'left'], loop.index) }}">
-			<a href="{{ path('show_news',  { 'slug': newsArticle.slug }) }}" 	>
-				<h2 class="header">{{ newsArticle.title }}</h2>
+		<div class="block {{ cycle(['right', 'left'], loop.index) }}">
+			<a href="{{ path('show_news',  { 'slug': newsArticle.slug }) }}">
+				<h2 class="header">
+					{{ newsArticle.title }}
+					{% if admin %}
+						<div class="admin">
+							<a href="{{ path('edit_news',  { 'slug': newsArticle.slug }) }}" 	
+								class="edit"> 	
+									<img src="{{ asset('images/icons/page_edit.png') }}" /> 		
+							</a>
+							<a href="{{ path('delete_news',  { 'slug': newsArticle.slug }) }}" 	
+								class="delete"> 	
+									<img src="{{ asset('images/icons/page_delete.png') }}" /> 		
+							</a>
+						</div>
+					{% endif %}
+					<div class="subheader">{{ newsArticle.getPublishedDate | date('l d-m-Y') }}</div>
+				</h2>
 			</a>
 			
 			<div class="content" style="height: 70px;">

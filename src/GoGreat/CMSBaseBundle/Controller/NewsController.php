@@ -21,7 +21,7 @@ class NewsController extends BaseController
     {    	
     	$newsArticles = $this->getEntityManager()
     						->getRepository('GoGreat\CMSBaseBundle\Entity\NewsArticle')
-							->findAll();
+							->findAllNews();
 		
     	if (!$newsArticles)
         	throw new Exception\NotFoundHttpException('No news articles found.');
@@ -108,7 +108,7 @@ class NewsController extends BaseController
     						->remove($newsArticle);
         $this->getEntityManager()->flush();
 
-        $this->get('session')->setFlash('Deleted news article');
+        $this->get('session')->setFlash('success', 'Deleted news article');
         
 		return $this->redirect($this->generateUrl('news'));
     }

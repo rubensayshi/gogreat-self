@@ -1,20 +1,22 @@
 {% extends 'CMSBaseBundle::layout.html.twig' %}
 
 {% block _content %}	
-	<div class="editables_container block two-col">
-		{% if admin %}
-			<div class="editables_admin">
-				<a href="{{ path('edit_page',  { 'slug': page.slug }) }}" 	
-					class="editables_button editables_edit"> 	
-						<img src="{{ asset('images/icons/page_edit.png') }}" /> 		
-				</a>
-				<a href="{{ path('delete_page',  { 'slug': page.slug }) }}" 	
-					class="editables_button editables_delete"> 	
-						<img src="{{ asset('images/icons/page_delete.png') }}" /> 		
-				</a>
-			</div>
-		{% endif %}
-		<h2 class="header">{% block _title %} {{ page.title | raw }} {% endblock %}</h2>
+	<div class="block two-col">
+		<h2 class="header">
+			{% block _title %} {{ page.title | raw }} {% endblock %}
+			{% if admin %}
+				<div class="admin">
+					<a href="{{ path('edit_page',  { 'slug': page.slug }) }}" 	
+						class="edit"> 	
+							<img src="{{ asset('images/icons/page_edit.png') }}" /> 		
+					</a>
+					<a href="{{ path('delete_page',  { 'slug': page.slug }) }}" 	
+						class="delete"> 	
+							<img src="{{ asset('images/icons/page_delete.png') }}" /> 		
+					</a>
+				</div>
+			{% endif %}	
+		</h2>
 		
 		<div class="content" style="min-height: 300px;">
 			{{ page.content | raw }}
