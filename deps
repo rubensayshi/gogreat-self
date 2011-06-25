@@ -1,21 +1,72 @@
-assetic               /                       http://github.com/kriswallsmith/assetic.git
-symfony               /                       http://github.com/symfony/symfony.git
-doctrine              /                       http://github.com/doctrine/doctrine2.git@2.0.5
-doctrine-dbal         /                       http://github.com/doctrine/dbal.git@2.0.5
-doctrine-common       /                       http://github.com/doctrine/common.git@origin/3.0.x
-swiftmailer           /                       http://github.com/swiftmailer/swiftmailer.git@origin/4.1
-twig                  /                       http://github.com/fabpot/Twig.git
-twig-extensions       /                       http://github.com/fabpot/Twig-extensions.git
-monolog               /                       http://github.com/Seldaek/monolog.git
-metadata              /                       http://github.com/schmittjoh/metadata.git
-FrameworkExtraBundle  /bundles/Sensio/Bundle  http://github.com/sensio/SensioFrameworkExtraBundle.git
-SecurityExtraBundle   /bundles/JMS            http://github.com/schmittjoh/SecurityExtraBundle.git
-WebConfiguratorBundle /bundles/Symfony/Bundle http://github.com/symfony/WebConfiguratorBundle.git
+[symfony]
+    git=http://github.com/symfony/symfony.git
 
-gogreat                /                       http://github.com/rubensayshi/symfony-wrapper.git
-MenuBundle             /bundles/Knplabs/Bundle http://github.com/knplabs/MenuBundle.git
-DoctrineFixturesBundle /bundles/Symfony/Bundle http://github.com/symfony/DoctrineFixturesBundle.git
-doctrine-fixtures      /                       http://github.com/doctrine/data-fixtures.git
+[twig]
+    git=http://github.com/fabpot/Twig.git
 
-imagine                /                         git://github.com/avalanche123/Imagine.git
-ImagineBundle          /bundles/Avalanche/Bundle git://github.com/avalanche123/AvalancheImagineBundle.git
+[monolog]
+    git=http://github.com/Seldaek/monolog.git
+
+[doctrine-common]
+    git=http://github.com/doctrine/common.git
+
+[doctrine-dbal]
+    git=http://github.com/doctrine/dbal.git
+
+[doctrine]
+    git=http://github.com/doctrine/doctrine2.git
+
+[swiftmailer]
+    git=http://github.com/swiftmailer/swiftmailer.git
+    version=origin/4.1
+
+[assetic]
+    git=http://github.com/kriswallsmith/assetic.git
+
+[twig-extensions]
+    git=http://github.com/fabpot/Twig-extensions.git
+
+[metadata]
+    git=http://github.com/schmittjoh/metadata.git
+
+[SensioFrameworkExtraBundle]
+    git=http://github.com/sensio/SensioFrameworkExtraBundle.git
+    target=/bundles/Sensio/Bundle/FrameworkExtraBundle
+
+[JMSSecurityExtraBundle]
+    git=http://github.com/schmittjoh/SecurityExtraBundle.git
+    target=/bundles/JMS/SecurityExtraBundle
+
+[SensioDistributionBundle]
+    git=http://github.com/sensio/SensioDistributionBundle.git
+    target=/bundles/Sensio/Bundle/DistributionBundle
+
+[SensioGeneratorBundle]
+    git=http://github.com/sensio/SensioGeneratorBundle.git
+    target=/bundles/Sensio/Bundle/GeneratorBundle
+
+[AsseticBundle]
+    git=http://github.com/symfony/AsseticBundle.git
+    target=/bundles/Symfony/Bundle/AsseticBundle
+
+[gogreat]
+    git=http://github.com/rubensayshi/symfony-wrapper.git
+    
+[MenuBundle]
+    git=http://github.com/knplabs/MenuBundle.git
+    target=/bundles/Knplabs/Bundle/MenuBundle
+    
+[DoctrineFixturesBundle]
+    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+    
+[doctrine-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
+
+[imagine]
+    git=git://github.com/avalanche123/Imagine.git
+    
+[ImagineBundle]
+    git=git://github.com/avalanche123/AvalancheImagineBundle.git
+    target=/bundles/Avalanche/Bundle/ImagineBundle
+    

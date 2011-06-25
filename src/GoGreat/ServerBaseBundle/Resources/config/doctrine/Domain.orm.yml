@@ -22,4 +22,5 @@ GoGreat\ServerBaseBundle\Entity\Domain:
       joinColumns:
         website_id:
           referencedColumnName: id
+      orphanRemoval: false
   lifecycleCallbacks: {  }

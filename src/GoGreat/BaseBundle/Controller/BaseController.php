@@ -6,10 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BaseController extends Controller
 {	
-	/**
-	 * @return Request
-	 */
-	protected function getRequest() { return $this->get('request'); }
 	
 	/**
 	 * @return Doctrine\ORM\EntityManager

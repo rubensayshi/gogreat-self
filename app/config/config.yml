@@ -16,14 +16,12 @@ framework:
     templating:      { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
     session:
         default_locale: %locale%
-        lifetime:       3600
         auto_start:     true
 
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-    extensions:       [twig.extension.text] 
 
 # Assetic Configuration
 assetic:

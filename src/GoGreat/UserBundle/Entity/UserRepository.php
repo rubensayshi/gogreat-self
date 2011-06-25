@@ -39,4 +39,9 @@ class UserRepository extends EntityRepository implements UserProviderInterface
 		$em->persist($item);
 		$em->flush();
 	}
+	
+	public function refreshUser(UserInterface $user) 
+	{
+		return $user;	
+	}
 }
