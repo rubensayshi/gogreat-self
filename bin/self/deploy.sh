@@ -26,9 +26,12 @@ fi
 
 $ROOT/bin/self/quick_clearcache.sh
 $ROOT/bin/self/fix_fileperms.sh
-${SUDO_DO}$ROOT/app/console doctrine:database:create
-${SUDO_DO}$ROOT/app/console doctrine:schema:create
-${SUDO_DO}$ROOT/app/console init:acl
-${SUDO_DO}$ROOT/app/console doctrine:fixtures:load
+
 ${SUDO_DO}$ROOT/app/console cache:clear
+${SUDO_DO}$ROOT/app/console cache:warmup
 ${SUDO_DO}$ROOT/app/console assets:install web
+${SUDO_DO}$ROOT/app/console assetic:dump
+
+$ROOT/bin/self/fix_fileperms.sh
+
+${SUDO_DO}$ROOT/app/console doctrine:ensure-production-settings

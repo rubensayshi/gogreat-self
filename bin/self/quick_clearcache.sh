@@ -1,8 +1,17 @@
 #!/bin/sh
 
-if [ -z "$SUDO_DO" ]; then
-	SUDO_DO="sudo -u www-data "
-	export SUDO_DO
+if [ -z "$APACHE_USR" ]; then
+	for USR in 		httpd \
+					www-data \
+					daemon \
+					apache
+	do
+		ID=`id $USR 2>&1`
+		if [ "$?" != "1" ]; then
+			APACHE_USR=$USR
+		fi
+	done
+	export APACHE_USR
 fi
 
 if [ -z "$ROOT" ]; then
@@ -10,4 +19,4 @@ if [ -z "$ROOT" ]; then
 	export ROOT
 fi
 
-${SUDO_DO}rm -rf $ROOT/app/cache/*
+sudo rm -rf $ROOT/app/cache/*
